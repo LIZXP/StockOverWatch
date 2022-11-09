@@ -1,2 +1,15 @@
 -------------------> USER STORIES
 
+> a non user I can access the site and view data
+
+> as a user I can access all available stocks + buy sell X stock
+
+> as a user I want to search by stock name (abbreviation)
+
+> as a user I want to view line graphs for particular stocks
+
+> as a user I want to view the current status of my stocks
+
+> as a user I want a report on closed stocks (profit% / loss%)
+
+> as a user I want to Set stocks to buy or sell based on value (preplanned buy/sell)
