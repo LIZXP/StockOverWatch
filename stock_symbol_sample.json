@@ -1,0 +1,98 @@
+[
+  {
+    "currency": "USD",
+    "description": "CALMARE THERAPEUTICS INC",
+    "displaySymbol": "CTTC",
+    "figi": "BBG000C5R3F2",
+    "isin": null,
+    "mic": "OOTC",
+    "shareClassFIGI": "BBG001S6P121",
+    "symbol": "CTTC",
+    "symbol2": "",
+    "type": "Common Stock"
+  },
+  {
+    "currency": "USD",
+    "description": "LIECHTENSTEIN LANDESBANK",
+    "displaySymbol": "LLAZF",
+    "figi": "BBG00XTVPXJ7",
+    "isin": null,
+    "mic": "OOTC",
+    "shareClassFIGI": "BBG001S7BYR5",
+    "symbol": "LLAZF",
+    "symbol2": "",
+    "type": "Common Stock"
+  },
+  {
+    "currency": "USD",
+    "description": "CITIZENS FINANCIAL GROUP - CFG 5 PERP",
+    "displaySymbol": "CFG.PRE",
+    "figi": "BBG00QN8PT17",
+    "isin": null,
+    "mic": "XNYS",
+    "shareClassFIGI": "",
+    "symbol": "CFG.PRE",
+    "symbol2": "",
+    "type": "PUBLIC"
+  },
+  {
+    "currency": "USD",
+    "description": "KROGER CO",
+    "displaySymbol": "KR",
+    "figi": "BBG000BMY992",
+    "isin": null,
+    "mic": "XNYS",
+    "shareClassFIGI": "BBG001S5SN40",
+    "symbol": "KR",
+    "symbol2": "",
+    "type": "Common Stock"
+  },
+  {
+    "currency": "USD",
+    "description": "KOSE CORP-UNSPONSORED ADR",
+    "displaySymbol": "KSRYY",
+    "figi": "BBG00CDNB951",
+    "isin": null,
+    "mic": "OOTC",
+    "shareClassFIGI": "BBG00CDNB9W1",
+    "symbol": "KSRYY",
+    "symbol2": "",
+    "type": "ADR"
+  },
+  {
+    "currency": "USD",
+    "description": "FUNDING CIRCLE HOLDINGS",
+    "displaySymbol": "FDCHF",
+    "figi": "BBG00MPTFF37",
+    "isin": null,
+    "mic": "OOTC",
+    "shareClassFIGI": "BBG00LWM8064",
+    "symbol": "FDCHF",
+    "symbol2": "",
+    "type": "Common Stock"
+  },
+  {
+    "currency": "USD",
+    "description": "AKER ASA-A SHARES",
+    "displaySymbol": "AKAAF",
+    "figi": "BBG000QBK5F6",
+    "isin": null,
+    "mic": "OOTC",
+    "shareClassFIGI": "BBG001SDP7H7",
+    "symbol": "AKAAF",
+    "symbol2": "",
+    "type": "Common Stock"
+  },
+  {
+    "currency": "USD",
+    "description": "PAYPAL HOLDINGS INC",
+    "displaySymbol": "PYPL",
+    "figi": "BBG0077VNXV6",
+    "isin": null,
+    "mic": "XNAS",
+    "shareClassFIGI": "BBG0077VNXW5",
+    "symbol": "PYPL",
+    "symbol2": "",
+    "type": "Common Stock"
+  }
+]
