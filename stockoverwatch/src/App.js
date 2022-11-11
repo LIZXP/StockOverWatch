@@ -2,7 +2,7 @@
 import { useState, useEffect, Fragment } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
-import axios from "axios";
+import { stocksPriceDataFinn } from "./helper/helperFunctions.js";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -27,34 +27,9 @@ function App() {
 
     getUser();
   }, []);
-  const stocksSymbols = [
-    "AAPL",
-    "META",
-    "GOOGL",
-    "NFLX",
-    "AMZN",
-    "TSLA",
-    "MSFT",
-  ];
-  const getStocksData = (stock) => {
-    return axios
-      .get(`${baseUrl}?symbol=${stock}&token=${token}`)
-      .catch((error) => {
-        console.error("FinnError", error.message);
-      });
-  };
+
   useEffect(() => {
-    const allPromise = [];
-    stocksSymbols.map((ssymb) => {
-      allPromise.push(
-        getStocksData(ssymb)
-          .then((res) => {
-            return { ...res.data, symbol: ssymb };
-          })
-          .catch((e) => console.log(e))
-      );
-    });
-    Promise.all(allPromise).then((res) => {
+    Promise.all(stocksPriceDataFinn()).then((res) => {
       setStocks(res);
     });
   }, []);
@@ -70,7 +45,7 @@ function App() {
           );
         })}
       </div>
-      <div className="Stocks">
+      <div className="stocks">
         {stocks.map((stock) => {
           return (
             <div key={stock.symbol}>
