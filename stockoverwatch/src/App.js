@@ -11,6 +11,7 @@ function App() {
 
   const baseUrl = "https://finnhub.io/api/v1/quote";
   const token = "cdmjq6aad3ibvooj3ue0cdmjq6aad3ibvooj3ueg";
+
   useEffect(() => {
     const getUser = async () => {
       try {
@@ -28,6 +29,7 @@ function App() {
 
     getUser();
   }, []);
+
   const getStocksData = (stock) => {
     return axios
       .get(`${baseUrl}?symbol=${stock}&token=${token}`)
@@ -35,6 +37,7 @@ function App() {
         console.error("FinnError", error.message);
       });
   };
+
   const stocksArr = [];
   useEffect(() => {
     getStocksData("META")
@@ -44,6 +47,7 @@ function App() {
       })
       .catch((e) => console.log(e));
   }, []);
+
   return (
     <div>
       <div className="App">
@@ -56,6 +60,7 @@ function App() {
           );
         })}
       </div>
+      
       <div className="Stocks">
         {stocks.map((stock) => {
           return (
