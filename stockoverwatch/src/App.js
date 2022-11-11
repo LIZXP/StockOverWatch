@@ -3,6 +3,7 @@ import { useState, useEffec, Fragment } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import axios from "axios";
+import Navbar from "./components/navbar/navbar.component";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -44,7 +45,7 @@ function App() {
       });
   };
   useEffect(() => {
-    let allPromise = [];
+    const allPromise = [];
     stocksSymbols.map((ssymb) => {
       allPromise.push(
         getStocksData(ssymb)
