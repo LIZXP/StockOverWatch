@@ -20,7 +20,6 @@ function App() {
             return { ...doc.data(), id: doc.id };
           })
         );
-        console.log(users);
       } catch (err) {
         console.log(err);
       }
@@ -28,6 +27,15 @@ function App() {
 
     getUser();
   }, []);
+  const stocksSymbols = [
+    "AAPL",
+    "META",
+    "GOOGL",
+    "NFLX",
+    "AMZN",
+    "TSLA",
+    "MSFT",
+  ];
   const getStocksData = (stock) => {
     return axios
       .get(`${baseUrl}?symbol=${stock}&token=${token}`)
@@ -35,14 +43,20 @@ function App() {
         console.error("FinnError", error.message);
       });
   };
-  const stocksArr = [];
   useEffect(() => {
-    getStocksData("META")
-      .then((res) => {
-        setStocks([{ ...res.data, symbol: "META" }]);
-        console.log(stocks);
-      })
-      .catch((e) => console.log(e));
+    let allPromise = [];
+    stocksSymbols.map((ssymb) => {
+      allPromise.push(
+        getStocksData(ssymb)
+          .then((res) => {
+            return { ...res.data, symbol: ssymb };
+          })
+          .catch((e) => console.log(e))
+      );
+    });
+    Promise.all(allPromise).then((res) => {
+      setStocks(res);
+    });
   }, []);
   return (
     <div>
@@ -60,6 +74,7 @@ function App() {
         {stocks.map((stock) => {
           return (
             <div key={stock.symbol}>
+              <h1>{stock.symbol}</h1>
               <h1>price: {stock.c}</h1>
               <h1>high: {stock.o}</h1>
             </div>
