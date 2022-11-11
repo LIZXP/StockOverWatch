@@ -1,9 +1,8 @@
 /* eslint-disable */
-import { useState, useEffec, Fragment } from "react";
+import { useState, useEffect, Fragment } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import axios from "axios";
-import Navbar from "./components/navbar/navbar.component";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -62,7 +61,6 @@ function App() {
   return (
     <Fragment>
       <div className="App">
-        <Navbar />
         {users.map((user) => {
           return (
             <div key={user.id}>
