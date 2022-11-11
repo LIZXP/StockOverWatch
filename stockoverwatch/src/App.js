@@ -1,5 +1,5 @@
 /* eslint-disable */
-import { useState, useEffect, useInsertionEffect } from "react";
+import { useState, useEffec, Fragment } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import axios from "axios";
@@ -39,7 +39,7 @@ function App() {
   const getStocksData = (stock) => {
     return axios
       .get(`${baseUrl}?symbol=${stock}&token=${token}`)
-      .catch((err) => {
+      .catch((error) => {
         console.error("FinnError", error.message);
       });
   };
@@ -59,8 +59,9 @@ function App() {
     });
   }, []);
   return (
-    <div>
+    <Fragment>
       <div className="App">
+        <Navbar />
         {users.map((user) => {
           return (
             <div key={user.id}>
@@ -81,7 +82,7 @@ function App() {
           );
         })}
       </div>
-    </div>
+    </Fragment>
   );
 }
 
