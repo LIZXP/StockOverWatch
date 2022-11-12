@@ -1,0 +1,39 @@
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #232a32;
+  padding: 20px 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.nav-links-container {
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4rem;
+  align-items: center;
+}
+.nav-links-container .nav-link {
+  flex-direction: row;
+  color: #fff;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.user-login {
+  justify-self: flex-end;
+}
+.user-login .nav-link {
+  color: #fff;
+  margin-left: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.nav-links-container .nav-link:hover {
+  color: #17d158;
+}
+.user-login .nav-link:hover {
+  color: #17d158;
+}

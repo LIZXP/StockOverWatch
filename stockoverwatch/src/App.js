@@ -3,6 +3,7 @@ import { useState, useEffect, Fragment } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import { stocksPriceDataFinn } from "./helper/helperFunctions.js";
+import Navbar from "./components/navbar/Navbar";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -36,6 +37,7 @@ function App() {
   return (
     <Fragment>
       <div className="App">
+        <Navbar />
         {users.map((user) => {
           return (
             <div key={user.id}>
