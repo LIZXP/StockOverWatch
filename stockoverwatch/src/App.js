@@ -4,6 +4,8 @@ import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import { stocksPriceDataFinn } from "./helper/helperFunctions.js";
 import Navbar from "./components/navbar/Navbar";
+import Stockcards from "./components/stockcards/Stockcards";
+import Body from "./components/bodycontent/Body";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -35,30 +37,13 @@ function App() {
     });
   }, []);
   return (
-    <Fragment>
+    <div className="stocks-container">
       <div className="App">
+        <Stockcards stocks={stocks} />
         <Navbar />
-        {users.map((user) => {
-          return (
-            <div key={user.id}>
-              <h1>Name: {user.name}</h1>
-              <h1>Phone: {user.phone}</h1>
-            </div>
-          );
-        })}
+        <Body />
       </div>
-      <div className="stocks">
-        {stocks.map((stock) => {
-          return (
-            <div key={stock.symbol}>
-              <h1>{stock.symbol}</h1>
-              <h1>price: {stock.c}</h1>
-              <h1>high: {stock.o}</h1>
-            </div>
-          );
-        })}
-      </div>
-    </Fragment>
+    </div>
   );
 }
 
