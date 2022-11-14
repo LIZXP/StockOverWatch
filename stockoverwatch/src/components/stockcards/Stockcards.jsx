@@ -5,16 +5,17 @@ function Stockcards({ stocks }) {
   const findTopFourStocks = (arr) => {
     return arr
       .sort((a, b) => {
-        return a.o - a.c - (b.o - b.c);
+        return a.d > b.d;
       })
       .slice(0, 4);
   };
   const topFour = findTopFourStocks(stocks);
+  console.log(findTopFourStocks(stocks));
   const diffNum = (opening, current) => {
-    return (opening - current).toFixed(2);
+    return (current - opening).toFixed(2);
   };
   const gainLossRatio = (opening, current) => {
-    return (((current - opening) / opening) * 100).toFixed(2);
+    return Math.abs((((current - opening) / opening) * 100).toFixed(2));
   };
   return (
     <div className="Stockcards-container">
@@ -37,7 +38,7 @@ function Stockcards({ stocks }) {
                     +{diffNum(stock.o, stock.c)}
                   </span>
                   <span className="green-num">
-                    ({gainLossRatio(stock.o, stock.c)}%)&uarr;
+                    ({gainLossRatio(stock.o, stock.c)}%) &uarr;
                   </span>
                 </>
               ) : (
