@@ -39,13 +39,3 @@
 .user-login .nav-link:hover {
   color: #17d158;
 }
-
-.nav-links-container .nav-link:hover::after {
-  content: "";
-  width: 30%;
-  height: 2px;
-  background: #17d158;
-  position: absolute;
-  bottom: -4px;
-  left: 20px;
-}
