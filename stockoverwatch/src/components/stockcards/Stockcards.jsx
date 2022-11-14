@@ -37,14 +37,14 @@ function Stockcards({ stocks }) {
                     +{diffNum(stock.o, stock.c)}
                   </span>
                   <span className="green-num">
-                    ({gainLossRatio(stock.o, stock.c)} %)
+                    ({gainLossRatio(stock.o, stock.c)}%)&uarr;
                   </span>
                 </>
               ) : (
                 <>
                   <span className="red-num">{diffNum(stock.o, stock.c)} </span>
                   <span className="red-num">
-                    ({gainLossRatio(stock.o, stock.c)} %)
+                    ({gainLossRatio(stock.o, stock.c)}%) &darr;
                   </span>
                 </>
               )}
