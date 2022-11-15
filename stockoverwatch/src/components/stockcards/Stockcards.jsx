@@ -7,7 +7,7 @@ function Stockcards({ stocks }) {
       .sort((a, b) => {
         return a.d > b.d;
       })
-      .slice(0, 4);
+      .slice(0, 6);
   };
   const topFour = findTopFourStocks(stocks);
   console.log(findTopFourStocks(stocks));
