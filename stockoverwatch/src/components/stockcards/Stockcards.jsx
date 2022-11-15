@@ -10,7 +10,6 @@ function Stockcards({ stocks }) {
       .slice(0, 6);
   };
   const topFour = findTopFourStocks(stocks);
-  console.log(findTopFourStocks(stocks));
   const diffNum = (opening, current) => {
     return (current - opening).toFixed(2);
   };
