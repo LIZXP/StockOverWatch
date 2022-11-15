@@ -1,0 +1,35 @@
+.Stockcards-container {
+  background-color: #232a32;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding-top: 30px;
+  position: sticky;
+  top: 0;
+}
+.green-num {
+  color: rgba(7, 199, 39, 0.551);
+}
+.red-num {
+  color: rgb(233, 44, 44);
+}
+.stock-header span {
+  display: inline-flex;
+}
+.stock-header .stock-name {
+  font-weight: 600;
+}
+
+.stock-header .stock-price {
+  font-size: x-large;
+  font-weight: 600;
+}
+.stock-header .stock-price .currency {
+  font-size: small;
+  padding-left: 1rem;
+  color: rgba(159, 152, 158, 0.937);
+}
+.stock-footer .today {
+  padding-left: 0.2rem;
+}
