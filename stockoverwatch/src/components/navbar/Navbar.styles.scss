@@ -10,6 +10,7 @@
   margin-right: auto;
   position: sticky;
   top: 105px;
+  z-index: 10;
 }
 
 .nav-links-container {
@@ -22,11 +23,15 @@
 .nav-links-container .nav-link {
   flex-direction: row;
   color: #fff;
-  font-size: 1.3rem;
-  font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 .user-login {
   justify-self: flex-end;
+  a {
+    padding: 12px;
+    background-color: rgb(167, 13, 13);
+  }
 }
 .user-login .nav-link {
   color: #fff;
