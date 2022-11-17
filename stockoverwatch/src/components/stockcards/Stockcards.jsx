@@ -21,7 +21,7 @@ function Stockcards({ stocks }) {
     <div className="Stockcards-container">
       {topSix.map((stock) => {
         return (
-          <div key={stock.symbol}>
+          <div key={stock.symbol} id="cards">
             <div className="stock-header">
               <div className="stock-name">
                 <span>{stock.symbol}</span>
