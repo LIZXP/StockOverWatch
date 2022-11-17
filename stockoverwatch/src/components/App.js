@@ -8,6 +8,7 @@ import Login from "./Login"
 import ForgotPassword from "./ForgotPassword"
 import UpdateProfile from "./UpdateProfile"
 import PrivateRoute from "./PrivateRoute"
+import Main from "./home/Home"
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
       <div className="w-100" style={{ maxWidth: "400px" }}>
           <AuthProvider>
             <Routes>
-              <Route path="/" element={<PrivateRoute><Dashboard/></PrivateRoute>}/> 
+              <Route path="/" element={<Main/>}/> 
               <Route path="/update-profile" element={<PrivateRoute><UpdateProfile/></PrivateRoute>}/> 
               <Route path="/signup" element={<Signup/>} />
               <Route path="/login" element={<Login/>} />
