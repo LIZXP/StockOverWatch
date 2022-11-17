@@ -2,14 +2,15 @@ import React from "react";
 import "./Stockcards.styles.scss";
 
 function Stockcards({ stocks }) {
-  const findTopFourStocks = (arr) => {
+  console.log(stocks);
+  const findTopSixStocks = (arr) => {
     return arr
       .sort((a, b) => {
-        return a.d > b.d;
+        return a.o - a.c - (b.o - b.c);
       })
       .slice(0, 6);
   };
-  const topFour = findTopFourStocks(stocks);
+  const topSix = findTopSixStocks(stocks);
   const diffNum = (opening, current) => {
     return (current - opening).toFixed(2);
   };
@@ -18,9 +19,9 @@ function Stockcards({ stocks }) {
   };
   return (
     <div className="Stockcards-container">
-      {topFour.map((stock) => {
+      {topSix.map((stock) => {
         return (
-          <div key={stock.symbol}>
+          <div key={stock.symbol} id="cards">
             <div className="stock-header">
               <div className="stock-name">
                 <span>{stock.symbol}</span>

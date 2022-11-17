@@ -5,6 +5,8 @@ import { stocksPriceDataFinn } from "../../helper/helperFunctions.js";
 import Navbar from "../navbar/Navbar";
 import Body from "../bodycontent/Body";
 import Stockcards from "../stockcards/Stockcards";
+import BodyTwo from "../bodycontent/BodyTwo";
+
 /* eslint-disable */
 function Main() {
   const [users, setUsers] = useState([]);
@@ -39,6 +41,7 @@ function Main() {
         <Stockcards stocks={stocks} />
         <Navbar />
         <Body />
+        <BodyTwo />
       </div>
     </div>
   );

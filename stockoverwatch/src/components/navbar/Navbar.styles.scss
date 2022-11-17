@@ -9,7 +9,9 @@
   margin-left: auto;
   margin-right: auto;
   position: sticky;
-  top: 105px;
+  top: 6.9rem;
+  z-index: 10;
+  font-family: "Playfair Display", serif, sans-serif;
 }
 
 .nav-links-container {
@@ -21,16 +23,21 @@
 }
 .nav-links-container .nav-link {
   flex-direction: row;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 600;
+  color: whitesmoke;
+  font-size: 1.5rem;
+  font-weight: 700;
 }
 .user-login {
   justify-self: flex-end;
+  a {
+    padding: 10px;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+  }
 }
 .user-login .nav-link {
-  color: #fff;
-  font-size: 1rem;
+  color: #232a32;
+  font-size: 0.8rem;
   font-weight: 600;
   margin-right: 15px;
 }
