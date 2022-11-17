@@ -1,8 +1,8 @@
 import React from "react";
-import "./buyerNest.styles.scss";
-function BuyerNest() {
+import "./StockList.styles.scss";
+function StockList() {
   return (
-    <div className="User-Profile">
+    <div className="StockList">
       <h1>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi tempora
       </h1>
@@ -10,4 +10,4 @@ function BuyerNest() {
   );
 }
 
-export default BuyerNest;
+export default StockList;

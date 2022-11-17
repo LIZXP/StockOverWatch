@@ -4,7 +4,7 @@ import "./sidebar.styles.scss";
 
 function Sidebar() {
   return (
-    <>
+    <div className="buyernest-container">
       <div className="sidebar">
         <div className="logo">
           <img
@@ -21,7 +21,7 @@ function Sidebar() {
         </div>
       </div>
       <Outlet />
-    </>
+    </div>
   );
 }
 
