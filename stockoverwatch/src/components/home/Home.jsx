@@ -6,6 +6,7 @@ import Navbar from "../navbar/Navbar";
 import Body from "../bodycontent/Body";
 import Stockcards from "../stockcards/Stockcards";
 import BodyTwo from "../bodycontent/BodyTwo";
+import "./home.styles.scss";
 
 /* eslint-disable */
 function Main() {
