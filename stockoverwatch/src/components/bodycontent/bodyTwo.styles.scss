@@ -1,4 +1,49 @@
 .bodytwo-container {
   background-color: whitesmoke;
   color: #232a32;
+  display: flex;
+  flex-direction: column;
+  .big-title {
+    margin-bottom: 1rem;
+    padding: 0;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 1200;
+  }
+  p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+}
+.top {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+
+  h1 {
+    text-align: left;
+    padding-left: 3rem;
+    font-size: 3rem;
+    padding-top: 6rem;
+  }
+  .right-image {
+    width: 36rem;
+    height: 36rem;
+  }
+}
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  .left-image {
+    width: 36rem;
+    height: 36rem;
+  }
+  h1 {
+    text-align: left;
+    padding-left: 3rem;
+    font-size: 2.5rem;
+    padding-top: 6rem;
+  }
 }

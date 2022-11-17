@@ -9,6 +9,14 @@ export const stocksPriceDataFinn = () => {
     "AMZN",
     "TSLA",
     "MSFT",
+    "JNJ",
+    "MMM",
+    "NVDA",
+    "AMD",
+    "EA",
+    "KO",
+    "SHEL",
+    "INTC",
   ];
   const baseUrl = "https://finnhub.io/api/v1/quote";
   const token = "cdmjq6aad3ibvooj3ue0cdmjq6aad3ibvooj3ueg";
