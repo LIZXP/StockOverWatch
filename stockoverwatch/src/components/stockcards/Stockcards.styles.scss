@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
-  padding-top: 1.9rem;
+  padding-top: 30px;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -14,8 +14,6 @@
   width: 10rem;
   height: 5rem;
   border-radius: 10px;
-  margin-left: 0.5rem;
-  padding-left: 0.5rem;
 }
 .green-num {
   color: rgba(7, 199, 39, 0.551);
