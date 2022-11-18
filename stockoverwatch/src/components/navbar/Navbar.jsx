@@ -14,7 +14,7 @@ function Navbar() {
           Home
         </Link>
 
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/buyernest">
           Buyer Nest
         </Link>
 
