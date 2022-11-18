@@ -2,7 +2,6 @@ import React from "react";
 import "./Stockcards.styles.scss";
 
 function Stockcards({ stocks }) {
-  console.log(stocks);
   const findTopSixStocks = (arr) => {
     return arr
       .sort((a, b) => {
@@ -27,7 +26,7 @@ function Stockcards({ stocks }) {
                 <span>{stock.symbol}</span>
               </div>
               <div className="stock-price">
-                <span>{stock.c}</span>
+                <span>{stock.c.toFixed(2)}</span>
                 <span className="currency">USD</span>
               </div>
             </div>
