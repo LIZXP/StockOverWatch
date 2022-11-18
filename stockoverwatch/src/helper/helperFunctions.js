@@ -15,8 +15,13 @@ export const stocksPriceDataFinn = () => {
     "AMD",
     "EA",
     "KO",
-    "SHEL",
+    "ORCL",
     "INTC",
+    "IBM",
+    "ADP",
+    "PYPL",
+    "ZBRA",
+    "BABA",
   ];
   const baseUrl = "https://finnhub.io/api/v1/quote";
   const token = "cdmjq6aad3ibvooj3ue0cdmjq6aad3ibvooj3ueg";
