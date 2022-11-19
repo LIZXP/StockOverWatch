@@ -13,7 +13,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Main from "./components/home/Home";
 import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
-
+/* eslint-disable */
 function App() {
   const [users, setUsers] = useState([]);
   const [stocks, setStocks] = useState([]);

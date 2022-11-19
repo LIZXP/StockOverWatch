@@ -4,7 +4,6 @@ import Stockcards from "../stockcards/Stockcards";
 import BodyTwo from "../bodycontent/BodyTwo";
 import "./Home.styles.scss";
 
-/* eslint-disable */
 function Main({ stocks }) {
   return (
     <div className="stocks-container">
