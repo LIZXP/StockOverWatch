@@ -40,7 +40,7 @@ function Main() {
     <div className="stocks-container">
       <div className="Main">
         <Stockcards stocks={stocks} />
-        <Navbar />
+        <Navbar stocks={stocks} />
         <Body />
         <BodyTwo />
       </div>

@@ -3,7 +3,7 @@ import { Outlet } from "react-router";
 import { valid } from "semver";
 import "./sidebar.styles.scss";
 import { Sidedata } from "./Sidedata.jsx";
-function Sidebar() {
+function Sidebar({ stocks }) {
   return (
     <div className="buyernest-container">
       <div className="sidebar-container">
