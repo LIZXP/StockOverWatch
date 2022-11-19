@@ -8,7 +8,7 @@ import ForgotPassword from "./components/ForgotPassword";
 import UpdateProfile from "./components/UpdateProfile";
 import PrivateRoute from "./components/PrivateRoute";
 import Main from "./components/home/Home";
-import StockList from "./components/buyerNest/StockList";
+import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
 
 function App() {

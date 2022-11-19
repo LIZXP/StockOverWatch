@@ -1,14 +1,79 @@
 .sidebar-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   color: aliceblue;
   justify-self: flex-start;
-  background-color: aquamarine;
+  background-color: rgb(6, 7, 7);
   height: 100%;
   width: 21rem;
+  .logo {
+    display: flex;
+    justify-content: center;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+  }
 }
 .buyernest-container {
   display: flex;
   width: 100vw;
   height: 100vh;
+}
+.sidebar-list {
+  height: auto;
+  padding: 0;
+  width: 100%;
+  border-bottom: 3px solid rgb(247, 247, 247);
+  #active {
+    background-color: #4c4c4c34;
+  }
+  .row {
+    width: 100%;
+    height: 6rem;
+    list-style-type: none;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 1.3rem;
+
+    #icon {
+      flex: 40%;
+      display: grid;
+      place-items: center;
+    }
+    #title {
+      flex: 60%;
+    }
+  }
+  .row:hover {
+    cursor: pointer;
+    background-color: #4c4c4c34;
+    border-right: 5px solid greenyellow;
+  }
+}
+.sidebar-container .icon-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 15rem;
+  .footer-logo {
+    align-self: center;
+    padding-right: 1rem;
+  }
+  .app-blah {
+    line-height: 1.5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+  .app-blah .get-app {
+    text-align: center;
+  }
+}
+
+.footer {
+  padding-top: 2rem;
+  padding-left: 1.3rem;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
