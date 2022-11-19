@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { db } from "./firebase-config";
+import { collection, getDocs } from "firebase/firestore";
+import { stocksPriceDataFinn } from "./helper/helperFunctions.js";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Routes, Route } from "react-router-dom";
@@ -12,12 +15,38 @@ import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
 
 function App() {
+  const [users, setUsers] = useState([]);
+  const [stocks, setStocks] = useState([]);
+  const userCollectionRef = collection(db, "users");
+
+  useEffect(() => {
+    const getUser = async () => {
+      try {
+        const data = await getDocs(userCollectionRef);
+        setUsers(
+          data.docs.map((doc) => {
+            return { ...doc.data(), id: doc.id };
+          })
+        );
+      } catch (err) {
+        console.log(err);
+      }
+    };
+
+    getUser();
+  }, []);
+
+  useEffect(() => {
+    Promise.all(stocksPriceDataFinn()).then((res) => {
+      setStocks(res);
+    });
+  }, []);
   return (
     <Container>
       <div>
         <AuthProvider>
           <Routes>
-            <Route path="/" element={<Main />} />
+            <Route path="/" element={<Main stocks={stocks} />} />
             <Route
               path="/update-profile"
               element={
