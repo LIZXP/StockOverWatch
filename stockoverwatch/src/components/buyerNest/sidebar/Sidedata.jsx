@@ -1,29 +1,33 @@
 import React from "react";
-import SavingsOutlinedIcon from "@mui/icons-material/SavingsOutlined";
+import CottageTwoToneIcon from "@mui/icons-material/CottageTwoTone";
+import AccountBalanceWalletTwoToneIcon from "@mui/icons-material/AccountBalanceWalletTwoTone";
+import ShowChartTwoToneIcon from "@mui/icons-material/ShowChartTwoTone";
+import QueryStatsTwoToneIcon from "@mui/icons-material/QueryStatsTwoTone";
+import ManageAccountsTwoToneIcon from "@mui/icons-material/ManageAccountsTwoTone";
 export const Sidedata = [
   {
     title: "Home",
-    icon: <SavingsOutlinedIcon />,
+    icon: <CottageTwoToneIcon />,
     link: "/",
   },
   {
     title: "Account",
-    icon: <SavingsOutlinedIcon />,
+    icon: <AccountBalanceWalletTwoToneIcon />,
     link: "/",
   },
   {
     title: "Stocks",
-    icon: <SavingsOutlinedIcon />,
+    icon: <ShowChartTwoToneIcon />,
     link: "/",
   },
   {
     title: "Insights",
-    icon: <SavingsOutlinedIcon />,
+    icon: <QueryStatsTwoToneIcon />,
     link: "/",
   },
   {
     title: "Profile",
-    icon: <SavingsOutlinedIcon />,
+    icon: <ManageAccountsTwoToneIcon />,
     link: "/",
   },
 ];

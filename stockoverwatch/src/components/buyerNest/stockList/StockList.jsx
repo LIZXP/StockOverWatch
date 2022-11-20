@@ -1,6 +1,8 @@
 import React from "react";
 import "./StockList.styles.scss";
-function StockList() {
+function StockList({ stocks, monthlyPrice }) {
+  console.log("monthly price", monthlyPrice);
+  console.log("current price", stocks);
   return (
     <div className="StockList">
       <h1>
@@ -51,26 +53,7 @@ function StockList() {
         necessitatibus sapiente deserunt maxime inventore eos non voluptates
         voluptatem omnis molestiae nemo laudantium nostrum adipisci voluptate
         hic obcaecati, cum, architecto debitis. Illum animi numquam, dolorem
-        assumenda tenetur voluptates? Explicabo odit ipsum iste nam! Excepturi
-        optio voluptates facere. Culpa vero blanditiis similique aut, impedit
-        harum quae. Tempora corrupti quia perferendis rerum dolores! Sunt, ullam
-        amet expedita corrupti deserunt accusantium explicabo voluptates
-        blanditiis reprehenderit recusandae. Repellat nostrum soluta reiciendis
-        nihil illum inventore nemo nam facere, adipisci, aliquam iusto eaque
-        molestiae culpa, aspernatur ad? Amet placeat ipsa exercitationem aperiam
-        tempore? Facilis ad eveniet veritatis explicabo esse maiores consequatur
-        consequuntur officiis aut fugit, ea officia velit! Est atque architecto
-        sit! Quod ipsam saepe quo ipsum. Harum totam aperiam est quae
-        cupiditate, commodi, rerum eaque suscipit velit rem voluptatibus
-        eligendi fugiat ipsam accusamus repudiandae illum accusantium numquam
-        officiis deleniti quidem blanditiis atque dolorum vel neque. Molestias!
-        Explicabo ab qui animi labore, earum necessitatibus, quidem delectus
-        adipisci aut autem accusamus sapiente vel minima in error quos nobis
-        harum, repellat officiis. Alias obcaecati quae neque. Nisi, quam
-        doloremque. Deserunt eveniet deleniti illum in perspiciatis voluptatibus
-        illo obcaecati qui, repellat neque quia sapiente sit eaque distinctio
-        nam reprehenderit debitis tempora atque odit animi inventore?
-        Consectetur numquam repudiandae ipsa ratione.
+        assumenda tenetur voluptates? Explicabo odit ipsum iste nam!
       </h1>
     </div>
   );

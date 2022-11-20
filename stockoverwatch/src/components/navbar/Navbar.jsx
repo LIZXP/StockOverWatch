@@ -14,7 +14,7 @@ function Navbar({ stocks }) {
           Home
         </Link>
 
-        <Link className="nav-link" to="/buyernest" state={{ stocks }}>
+        <Link className="nav-link" to="/buyernest">
           Buyer Nest
         </Link>
 
