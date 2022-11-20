@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./Navbar.styles.scss";
-function Navbar() {
+function Navbar({ stocks }) {
   return (
     <div className="Navbar">
       <img
@@ -14,7 +14,7 @@ function Navbar() {
           Home
         </Link>
 
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/buyernest" state={{ stocks }}>
           Buyer Nest
         </Link>
 

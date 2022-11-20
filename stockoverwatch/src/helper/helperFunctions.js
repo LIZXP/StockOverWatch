@@ -1,7 +1,7 @@
 import axios from "axios";
 /* eslint-disable */
 export const stocksPriceDataFinn = () => {
-  const stocksSymbols = [
+  const fulllist = [
     "AAPL",
     "META",
     "GOOGL",
@@ -23,6 +23,7 @@ export const stocksPriceDataFinn = () => {
     "ZBRA",
     "BABA",
   ];
+  const stocksSymbols = ["AAPL", "META", "GOOGL", "NFLX", "AMZN", "TSLA"];
   const baseUrl = "https://finnhub.io/api/v1/quote";
   const token = "cdmjq6aad3ibvooj3ue0cdmjq6aad3ibvooj3ueg";
 
