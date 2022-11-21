@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
-import { stocksPriceDataFinn } from "./helper/helperFunctions.js";
+import {
+  stocksPriceDataFinn,
+  monthStockPriceFinn,
+} from "./helper/helperFunctions.js";
 import { Container } from "react-bootstrap";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Routes, Route } from "react-router-dom";
@@ -17,6 +20,7 @@ import Sidebar from "./components/buyerNest/sidebar/Sidebar";
 function App() {
   const [users, setUsers] = useState([]);
   const [stocks, setStocks] = useState([]);
+  const [monthlyPrice, setmonthlyPrice] = useState([]);
   const userCollectionRef = collection(db, "users");
 
   useEffect(() => {
@@ -41,6 +45,12 @@ function App() {
       setStocks(res);
     });
   }, []);
+
+  useEffect(() => {
+    Promise.all(monthStockPriceFinn()).then((res) => {
+      setmonthlyPrice(res);
+    });
+  }, []);
   return (
     <Container>
       <div>
@@ -59,7 +69,12 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/forgot-password" element={<ForgotPassword />} />
             <Route path="/buyernest" element={<Sidebar />}>
-              <Route index element={<StockList />} />
+              <Route
+                index
+                element={
+                  <StockList stocks={stocks} monthlyPrice={monthlyPrice} />
+                }
+              />
               <Route path="1" element={<h2>hello world</h2>} />
             </Route>
           </Routes>
