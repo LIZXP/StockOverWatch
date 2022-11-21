@@ -52,13 +52,13 @@ export const monthStockPriceFinn = () => {
   const stocksSymbols = ["AAPL", "META", "GOOGL", "NFLX", "AMZN", "TSLA"];
   const baseUrl = "https://finnhub.io/api/v1/stock/candle";
   const token = "cdmjq6aad3ibvooj3ue0cdmjq6aad3ibvooj3ueg";
-  const UNIXtsFrom = "1664649826";
+  const UNIXtsFrom = "1666391811";
   const UNIXtsTo = "1668969826";
   const allPromiseCandle = [];
   const getStockPriceData = (stock) => {
     return axios
       .get(
-        `${baseUrl}?symbol=${stock}&resolution=1&from=${UNIXtsFrom}&to=${UNIXtsTo}&token=${token}`
+        `${baseUrl}?symbol=${stock}&resolution=D&from=${UNIXtsFrom}&to=${UNIXtsTo}&token=${token}`
       )
       .catch((error) => {
         console.error("FinnError", error.message);

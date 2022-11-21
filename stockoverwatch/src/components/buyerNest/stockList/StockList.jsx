@@ -1,8 +1,10 @@
 import React, { Fragment } from "react";
 import "./StockList.styles.scss";
+import Chart from "chart.js/auto";
+import { Line } from "react-chartjs-2";
+
 function StockList({ stocks, monthlyPrice }) {
   console.log("monthly price", monthlyPrice);
-  console.log("current price", stocks);
   return (
     <div className="StockList">
       <div className="current-price">
@@ -23,7 +25,30 @@ function StockList({ stocks, monthlyPrice }) {
           })}
         </ul>
       </div>
-      <div className="monthly-price"></div>
+      <div className="monthly-price-chart">
+        {monthlyPrice.map((obj, i) => {
+          const data = {
+            labels: obj.t.map((timeStamp) => {
+              const date = new Date(timeStamp * 1000);
+              return date.toLocaleDateString("en-US");
+            }),
+            datasets: [
+              {
+                label: obj.symbol,
+                data: obj.c.map((price) => {
+                  return price;
+                }),
+              },
+            ],
+          };
+
+          return (
+            <Fragment key={i}>
+              <Line data={data} />
+            </Fragment>
+          );
+        })}
+      </div>
     </div>
   );
 }
