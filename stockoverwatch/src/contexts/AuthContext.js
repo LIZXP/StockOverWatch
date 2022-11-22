@@ -8,6 +8,7 @@ import {
   updateEmail,
 } from "firebase/auth";
 
+
 export const AuthContext = React.createContext();
 
 export function useAuth() {
