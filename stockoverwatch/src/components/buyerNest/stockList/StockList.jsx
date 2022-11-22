@@ -1,41 +1,101 @@
-import React from "react";
+import React, { Fragment, useState } from "react";
 import "./StockList.styles.scss";
-function StockList({ stocks, monthlyPrice }) {
-  console.log("monthly price", monthlyPrice);
-  console.log("current price", stocks);
+import Chart from "chart.js/auto";
+import { Line } from "react-chartjs-2";
+
+function StockList({ stocks, monthlyPrices }) {
+  const [order, setOrder] = useState([]);
+  if (stocks.length === 0 || monthlyPrices.length === 0) {
+    return null;
+  }
+
   return (
     <div className="StockList">
-      <h1>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi tempora
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur
-        numquam magni dicta quam corporis, sunt nobis aliquid quod vero optio
-        quae minima atque maxime voluptatem molestias. Atque tenetur unde ullam!
-        Dolorem, quos. Illum voluptate impedit aliquid, numquam corporis natus?
-        Minus perferendis eveniet harum fuga neque eligendi dignissimos quia
-        sed? Rerum, qui unde odit deserunt explicabo similique dolore nulla
-        repellendus dolores. Doloribus culpa inventore repudiandae tempora
-        beatae! Molestiae ab eos fugit qui quos adipisci non quo illum nostrum
-        iusto eius optio, nesciunt repudiandae atque dolor ipsum vel ducimus
-        dolorum incidunt facilis. Incidunt possimus optio et laudantium est, vel
-        ducimus adipisci earum delectus iusto omnis placeat molestias,
-        perferendis voluptates tempora commodi. Modi pariatur facere, vitae quam
-        praesentium quo nihil fugit voluptas neque? In excepturi similique id
-        tempora maxime rem ut quis dolor quaerat non fuga, velit dolore
-        accusamus et nobis natus voluptatibus esse magni fugit, voluptas optio
-        doloremque. Quibusdam nobis facere excepturi. Velit cum voluptatum
-        earum. Quo at quos enim ducimus voluptatibus autem incidunt quis sequi
-        voluptas. Dolorum, iure suscipit necessitatibus accusantium velit illo
-        voluptates, facilis adipisci corrupti nemo rem corporis possimus.
-        Corrupti corporis, accusantium consequatur, aliquid nisi explicabo, vero
-        doloremque numquam maxime odit excepturi. Ratione pariatur porro, modi
-        doloremque quod esse, expedita distinctio amet harum eos veniam aliquam,
-        quidem vitae hic? Recusandae veniam delectus quia unde assumenda, magni,
-        id fugit veritatis architecto repellat eligendi illum eveniet accusamus
-        dicta! Dolor nemo fuga, reprehenderit atque at recusandae voluptates
-        ipsa ex voluptas itaque adipisci. Laudantium sit repudiandae nemo
-        tenetur earum quidem quia necessitatibus, ea laboriosam quo natus iusto
-        officia, minima amet maiores aliquam dicta. Vero est repellat harum et
-      </h1>
+      {stocks.map((stock, i) => {
+        const monthlyPriceData = {
+          labels: monthlyPrices[i].t.map((timeStamp) => {
+            const date = new Date(timeStamp * 1000);
+            return date.toLocaleDateString("en-US");
+          }),
+          datasets: [
+            {
+              label: monthlyPrices[i].symbol,
+              data: monthlyPrices[i].c.map((price) => {
+                return price;
+              }),
+              borderColor: "rgb(37, 171, 62)",
+              fill: true,
+            },
+          ],
+        };
+        return (
+          <Fragment key={i}>
+            <div className="price-chart-container">
+              <div className="price-list">
+                <div className="price-detail">
+                  <h3 className="title">{stock.symbol}</h3>
+                  <ul>
+                    <span className="price left">
+                      <li>Current price: {stock.c.toFixed(2)}</li>
+                    </span>
+                    {stock.d > 0 ? (
+                      <li className="green-num">
+                        Change: {stock.d.toFixed(2)} &uarr;
+                      </li>
+                    ) : (
+                      <li className="red-num">
+                        Change: {stock.d.toFixed(2)} &darr;
+                      </li>
+                    )}
+                    <span className="price-right">
+                      <li>Close price: {stock.pc.toFixed(2)}</li>
+                      {(stock.dp * 10).toFixed(2) > 0 ? (
+                        <li className="green-num">
+                          Percent Change: {(stock.dp * 10).toFixed(2)}% &uarr;
+                        </li>
+                      ) : (
+                        <li className="red-num">
+                          Percent Change: {(stock.dp * 10).toFixed(2)}% &darr;
+                        </li>
+                      )}
+                    </span>
+                  </ul>
+                </div>
+                <div className="order-button">
+                  <input
+                    type="number"
+                    onChange={(e) => {
+                      setOrder(...stock, e.target.value);
+                    }}
+                  />
+                  <button>Add Stock</button>
+                </div>
+              </div>
+
+              <div className="line-chart">
+                <Line
+                  data={monthlyPriceData}
+                  options={{
+                    scales: {
+                      x: {
+                        ticks: {
+                          display: false,
+                        },
+                      },
+                    },
+                    elements: {
+                      point: {
+                        radius: 0,
+                      },
+                    },
+                  }}
+                  className="myChart"
+                />
+              </div>
+            </div>
+          </Fragment>
+        );
+      })}
     </div>
   );
 }

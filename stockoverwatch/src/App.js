@@ -15,6 +15,7 @@ import UpdateProfile from "./account/UpdateProfile";
 import Main from "./components/home/Home";
 import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
+
 /* eslint-disable */
 function App() {
   const [users, setUsers] = useState([]);
@@ -51,7 +52,6 @@ function App() {
     });
   }, []);
   return (
-
     <div>
       <AuthProvider>
         <Routes>
@@ -61,7 +61,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/buyernest" element={<Sidebar />}>
-            <Route index element={<StockList stocks={stocks} monthlyPrice={monthlyPrice} />}/>
+            <Route index element={<StockList stocks={stocks} monthlyPrices={monthlyPrice} />}/>
           </Route>
         </Routes>
       </AuthProvider>

@@ -1,7 +1,60 @@
 .StockList {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 15%;
   margin-top: 0;
   padding-left: 1rem;
   padding-right: 1rem;
+  text-align: center;
+  color: azure;
+  background-color: #232a32;
+  .price-chart-container {
+    display: flex;
+    align-items: center;
+    margin-left: 10rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    background-color: rgb(47, 49, 49);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+  }
+  .price-chart-container:hover {
+    background-color: rgb(70, 72, 72);
+    border-right: 3px solid greenyellow;
+  }
+  .price-chart-container .price {
+    display: flex;
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-right: 3rem;
+      margin-right: auto;
+    }
+    .price-left {
+      display: flex;
+      flex-direction: row;
+    }
+    .price-right {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .myChart {
+    width: 31rem !important;
+    height: 13rem !important;
+  }
+}
+.price-list .price-detail ul {
+  list-style: none;
+  text-align: left;
+  display: inline;
+}
+.price-list .order-button input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 5rem;
 }
