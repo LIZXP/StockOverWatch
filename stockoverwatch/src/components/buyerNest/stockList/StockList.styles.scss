@@ -4,4 +4,15 @@
   margin-top: 0;
   padding-left: 1rem;
   padding-right: 1rem;
+  text-align: center;
+  #current-price {
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    display: inline-block;
+  }
+  #monthly-price-chart {
+    height: 15rem;
+    width: 20rem;
+    display: inline-block;
+  }
 }

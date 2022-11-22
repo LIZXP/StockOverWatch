@@ -72,7 +72,7 @@ function App() {
               <Route
                 index
                 element={
-                  <StockList stocks={stocks} monthlyPrice={monthlyPrice} />
+                  <StockList stocks={stocks} monthlyPrices={monthlyPrice} />
                 }
               />
               <Route path="1" element={<h2>hello world</h2>} />
