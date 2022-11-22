@@ -5,7 +5,6 @@ import {
   stocksPriceDataFinn,
   monthStockPriceFinn,
 } from "./helper/helperFunctions.js";
-import { Container } from "react-bootstrap";
 
 import { AuthProvider } from "./contexts/AuthContext";
 import { Routes, Route } from "react-router-dom";
