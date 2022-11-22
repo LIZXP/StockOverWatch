@@ -31,11 +31,11 @@ function Navbar() {
         </Link>
       </div>
       <div className="user-login">
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/login">
           Sign in
         </Link>
 
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/signup">
           Sign up
         </Link>
       </div>

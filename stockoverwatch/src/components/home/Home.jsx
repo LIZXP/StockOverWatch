@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { db } from "./firebase-config";
+import { db } from "../../firebase-config";
 import { collection, getDocs } from "firebase/firestore";
 import { stocksPriceDataFinn } from "../../helper/helperFunctions.js";
 import Navbar from "../navbar/Navbar";
