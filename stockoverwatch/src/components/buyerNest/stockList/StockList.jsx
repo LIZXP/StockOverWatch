@@ -10,39 +10,40 @@ function StockList({ stocks, monthlyPrices }) {
 
   return (
     <div className="StockList">
-      <div id="current-price">
-        {stocks.map((stock, i) => {
-          const monthlyPriceData = {
-            labels: monthlyPrices[i].t.map((timeStamp) => {
-              const date = new Date(timeStamp * 1000);
-              return date.toLocaleDateString("en-US");
-            }),
-            datasets: [
-              {
-                label: monthlyPrices[i].symbol,
-                data: monthlyPrices[i].c.map((price) => {
-                  return price;
-                }),
-                borderColor: "rgb(37, 171, 62)",
-                fill: true,
-              },
-            ],
-          };
-          return (
-            <Fragment key={i}>
-              <div>
-                <div>
-                  <ul>
-                    <li>{stock.symbol}</li>
+      {stocks.map((stock, i) => {
+        const monthlyPriceData = {
+          labels: monthlyPrices[i].t.map((timeStamp) => {
+            const date = new Date(timeStamp * 1000);
+            return date.toLocaleDateString("en-US");
+          }),
+          datasets: [
+            {
+              label: monthlyPrices[i].symbol,
+              data: monthlyPrices[i].c.map((price) => {
+                return price;
+              }),
+              borderColor: "rgb(37, 171, 62)",
+              fill: true,
+            },
+          ],
+        };
+        return (
+          <Fragment key={i}>
+            <div className="price-chart-container">
+              <div className="price">
+                <h3 className="title">{stock.symbol}</h3>
+                <ul>
+                  <span className="price left">
                     <li>Current price: {stock.c}</li>
-                    <li>Change: {stock.d}</li>
-                    <li>Percent change: {(stock.dp * 10).toFixed(2)}%</li>
-                    <li>High price: {stock.h}</li>
-                    <li>Low price: {stock.l}</li>
-                    <li>Open price: {stock.o}</li>
-                    <li>Previous close price: {stock.pc}</li>
-                  </ul>
-                </div>
+                    <li>{stock.d}</li>
+                  </span>
+                  <span className="price-right">
+                    <li>Close price: {stock.pc}</li>
+                    <li>{(stock.dp * 10).toFixed(2)}%</li>
+                  </span>
+                </ul>
+              </div>
+              <div className="line-chart">
                 <Line
                   data={monthlyPriceData}
                   options={{
@@ -59,13 +60,13 @@ function StockList({ stocks, monthlyPrices }) {
                       },
                     },
                   }}
-                  id="myChart"
+                  className="myChart"
                 />
               </div>
-            </Fragment>
-          );
-        })}
-      </div>
+            </div>
+          </Fragment>
+        );
+      })}
     </div>
   );
 }

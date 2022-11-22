@@ -1,18 +1,44 @@
 .StockList {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
   margin-left: 15%;
   margin-top: 0;
   padding-left: 1rem;
   padding-right: 1rem;
   text-align: center;
-  #current-price {
-    background-color: rgb(0, 0, 0);
-    color: aliceblue;
-    display: inline-block;
+  color: azure;
+  background-color: #232a32;
+  .price-chart-container {
+    display: flex;
+    align-items: center;
   }
-  #monthly-price-chart {
-    height: 15rem;
-    width: 20rem;
-    display: inline-block;
+  .price-chart-container .price {
+    display: flex;
+    ul {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding-right: 3rem;
+      margin-right: auto;
+    }
+    .price-left {
+      display: flex;
+      flex-direction: row;
+    }
+    .price-right {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .myChart {
+    width: 12rem !important;
+    height: 6rem !important;
+  }
+
+  .price ul {
+    list-style: none;
+    text-align: left;
   }
 }
