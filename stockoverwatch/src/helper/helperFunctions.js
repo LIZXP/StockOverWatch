@@ -76,5 +76,3 @@ export const monthStockPriceFinn = () => {
 
   return allPromiseCandle;
 };
-
-monthStockPriceFinn();

@@ -12,6 +12,17 @@
   .price-chart-container {
     display: flex;
     align-items: center;
+    margin-left: 10rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    background-color: rgb(47, 49, 49);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 5px;
+  }
+  .price-chart-container:hover {
+    background-color: rgb(70, 72, 72);
+    border-right: 3px solid greenyellow;
   }
   .price-chart-container .price {
     display: flex;
@@ -33,12 +44,17 @@
   }
 
   .myChart {
-    width: 12rem !important;
-    height: 6rem !important;
+    width: 31rem !important;
+    height: 13rem !important;
   }
-
-  .price ul {
-    list-style: none;
-    text-align: left;
-  }
+}
+.price-list .price-detail ul {
+  list-style: none;
+  text-align: left;
+  display: inline;
+}
+.price-list .order-button input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 5rem;
 }

@@ -1,9 +1,10 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import "./StockList.styles.scss";
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 
 function StockList({ stocks, monthlyPrices }) {
+  const [order, setOrder] = useState([]);
   if (stocks.length === 0 || monthlyPrices.length === 0) {
     return null;
   }
@@ -30,19 +31,47 @@ function StockList({ stocks, monthlyPrices }) {
         return (
           <Fragment key={i}>
             <div className="price-chart-container">
-              <div className="price">
-                <h3 className="title">{stock.symbol}</h3>
-                <ul>
-                  <span className="price left">
-                    <li>Current price: {stock.c}</li>
-                    <li>{stock.d}</li>
-                  </span>
-                  <span className="price-right">
-                    <li>Close price: {stock.pc}</li>
-                    <li>{(stock.dp * 10).toFixed(2)}%</li>
-                  </span>
-                </ul>
+              <div className="price-list">
+                <div className="price-detail">
+                  <h3 className="title">{stock.symbol}</h3>
+                  <ul>
+                    <span className="price left">
+                      <li>Current price: {stock.c.toFixed(2)}</li>
+                    </span>
+                    {stock.d > 0 ? (
+                      <li className="green-num">
+                        Change: {stock.d.toFixed(2)} &uarr;
+                      </li>
+                    ) : (
+                      <li className="red-num">
+                        Change: {stock.d.toFixed(2)} &darr;
+                      </li>
+                    )}
+                    <span className="price-right">
+                      <li>Close price: {stock.pc.toFixed(2)}</li>
+                      {(stock.dp * 10).toFixed(2) > 0 ? (
+                        <li className="green-num">
+                          Percent Change: {(stock.dp * 10).toFixed(2)}% &uarr;
+                        </li>
+                      ) : (
+                        <li className="red-num">
+                          Percent Change: {(stock.dp * 10).toFixed(2)}% &darr;
+                        </li>
+                      )}
+                    </span>
+                  </ul>
+                </div>
+                <div className="order-button">
+                  <input
+                    type="number"
+                    onChange={(e) => {
+                      setOrder(...stock, e.target.value);
+                    }}
+                  />
+                  <button>Add Stock</button>
+                </div>
               </div>
+
               <div className="line-chart">
                 <Line
                   data={monthlyPriceData}
