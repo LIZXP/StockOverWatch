@@ -10,6 +10,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Main from "./components/home/Home";
 import StockList from "./components/buyerNest/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
+import Learn from "./components/learn/Learn";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
               <Route index element={<StockList />} />
               <Route path="1" element={<h2>hello world</h2>} />
             </Route>
+            <Route path="/learn" element={<Learn />} />
           </Routes>
         </AuthProvider>
       </div>
