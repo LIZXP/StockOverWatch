@@ -15,6 +15,7 @@ import UpdateProfile from "./account/UpdateProfile";
 import Main from "./components/home/Home";
 import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
+import Learn from "./components/learn/Learn";
 
 /* eslint-disable */
 function App() {
@@ -63,6 +64,7 @@ function App() {
           <Route path="/buyernest" element={<Sidebar />}>
             <Route index element={<StockList stocks={stocks} monthlyPrices={monthlyPrice} />}/>
           </Route>
+          <Route path="/learn" element={<Learn />} />
         </Routes>
       </AuthProvider>
     </div>

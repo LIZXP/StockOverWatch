@@ -1,0 +1,92 @@
+.card {
+  /* Sizing */
+  height: 100%;
+  width: 100%;
+
+  transform-style: preserve-3d;
+
+  /* Content Alignment */
+  position: relative;
+
+  /* Styling */
+  border-radius: 5px;
+  border: 3px solid rgb(255, 217, 0);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+
+  transition: transform 3000ms;
+}
+
+.card:hover.card {
+  transform: rotateY(180deg);
+}
+
+.card-front {
+  /* Sizing */
+  height: 100%;
+  width: 100%;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  /* Alignment */
+  position: absolute;
+
+  /* Content Alignment */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  /* Content Styling */
+  text-align: center;
+  font-weight: 400;
+  font-size: 50px;
+  background-color: rgba(255, 192, 203, 0.391)
+}
+
+.card-back {
+  /* Sizing */
+  height: 100%;
+  width: 100%;
+
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+
+  /* Alignment */
+  position: absolute;
+
+  /* Content Alignment */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: rotateY(180deg);
+  text-shadow: 2px 2px 10px rgb(0, 0, 0);
+}
+
+.tip-details {
+  height: 100%;
+  width: 100%;
+  float: inline-start;
+  color: black;
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* front card content styling */
+.image {
+  margin: 24px;
+  border-radius: 50%;
+  width: 135px;
+}
+
+.content {
+  font-size: 20px;
+  color: black;
+  text-align: center;
+  width: 80%;
+}
