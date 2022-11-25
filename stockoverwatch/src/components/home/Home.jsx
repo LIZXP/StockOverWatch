@@ -1,18 +1,19 @@
 import Navbar from "../navbar/Navbar";
 import Body from "../bodycontent/Body";
-import Stockcards from "../stockcards/Stockcards";
 import "./Home.styles.scss";
 
 function Main({ stocks }) {
-  return (
+  // if (!stocks) {
+  //   return null;
+  // }
+  return stocks ? (
     <div className="stocks-container">
       <div className="Main">
-        <Stockcards stocks={stocks} />
-        <Navbar />
+        <Navbar stocks={stocks} />
         <Body />
       </div>
     </div>
-  );
+  ) : null;
 }
 
 export default Main;
