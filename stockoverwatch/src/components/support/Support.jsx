@@ -2,6 +2,9 @@ import React from "react";
 import "./support.styles.scss";
 import EmailIcon from "@mui/icons-material/Email";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import peter from "../../assets/peter.jpg";
+import chris from "../../assets/chris.jpg";
+import bryan from "../../assets/bryan.jpg";
 
 function Support() {
   return (
@@ -52,10 +55,24 @@ function Support() {
             </ul>
           </div>
         </div>
-        <div className="contactForm">
-          <h2>Send us a Message</h2>
-          <div className="formBox">
-            <div className="inpuitBox"></div>
+        <div className="about-us">
+          <h1>About This Project</h1>
+          <div className="text">
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
+              voluptate dignissimos excepturi repellendus facere, rem suscipit
+              molestiae, ratione consequatur omnis nobis eaque, hic
+              necessitatibus commodi. Alias sequi nostrum nesciunt in! Ad fugiat
+              eum nobis placeat voluptas at officiis cupiditate aliquam incidunt
+              natus? Recusandae, delectus animi laudantium iste deserunt,
+              obcaecati, sit mollitia aliquam sunt distinctio enim a vitae minus
+              dolorem. Consequuntur!
+            </p>
+            <div className="dev-pics">
+              <img src={peter} alt="peter" />
+              <img src={chris} alt="chris" />
+              <img src={bryan} alt="bryan" />
+            </div>
           </div>
         </div>
       </div>
