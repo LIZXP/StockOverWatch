@@ -1,5 +1,6 @@
 import React from "react";
 import "./support.styles.scss";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
 function Support() {
   return (
@@ -9,7 +10,22 @@ function Support() {
           <h2>Contact Info</h2>
           <ul className="info">
             <li>
-              <span></span>
+              <span>
+                <AlternateEmailIcon /> <br />
+              </span>
+              <span>Peter.xli@outlook.com</span>
+            </li>
+            <li>
+              <span>
+                <AlternateEmailIcon /> <br />
+              </span>
+              <span>Chris.Bowyer@gmail.com</span>
+            </li>
+            <li>
+              <span>
+                <AlternateEmailIcon /> <br />
+              </span>
+              <span>Bryan.Nuguyen@gmail.com</span>
             </li>
           </ul>
         </div>

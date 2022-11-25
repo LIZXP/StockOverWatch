@@ -26,7 +26,7 @@ function Navbar({ stocks }) {
           News
         </Link>
 
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/support">
           Support
         </Link>
       </div>
