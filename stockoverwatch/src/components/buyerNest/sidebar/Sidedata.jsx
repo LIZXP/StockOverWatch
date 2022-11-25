@@ -18,7 +18,7 @@ export const Sidedata = [
   {
     title: "Stocks",
     icon: <ShowChartTwoToneIcon />,
-    link: "/",
+    link: "/buyernest/stocks",
   },
   {
     title: "Insights",

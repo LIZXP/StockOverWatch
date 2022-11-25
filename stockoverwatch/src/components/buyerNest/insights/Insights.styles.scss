@@ -1,0 +1,40 @@
+.insight-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 15%;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f8f9f8;
+  .big-title {
+    text-align: left;
+    padding-top: 30px;
+    padding-left: 24%;
+    height: 10%;
+    width: 100%;
+
+    font-size: 2rem;
+    font-weight: 600;
+    background-color: black;
+    color: #f8f9f8;
+  }
+  .top-bar {
+    background-color: black;
+  }
+  .bar-chart-container {
+    display: flex;
+    flex-direction: row;
+    .bar-chart {
+      height: 30rem !important;
+      width: 60rem !important;
+      margin-left: 15%;
+      margin-top: 20%;
+    }
+    .invest-return {
+      margin-top: 30%;
+      span {
+        padding: 3rem;
+      }
+    }
+  }
+}

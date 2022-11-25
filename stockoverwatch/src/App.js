@@ -5,7 +5,6 @@ import {
   stocksPriceDataFinn,
   monthStockPriceFinn,
 } from "./helper/helperFunctions.js";
-
 import { AuthProvider } from "./contexts/AuthContext";
 import { Routes, Route } from "react-router-dom";
 import Signup from "./components/Signup.js/SignUp";
@@ -16,6 +15,7 @@ import Main from "./components/home/Home";
 import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
 import Learn from "./components/learn/Learn";
+import Insights from "./components/buyerNest/insights/Insights";
 
 /* eslint-disable */
 function App() {
@@ -43,15 +43,23 @@ function App() {
 
   useEffect(() => {
     Promise.all(stocksPriceDataFinn()).then((res) => {
-      setStocks(res);
+      window.localStorage.setItem("stocks", JSON.stringify(res));
     });
   }, []);
 
   useEffect(() => {
     Promise.all(monthStockPriceFinn()).then((res) => {
-      setmonthlyPrice(res);
+      window.localStorage.setItem("monthlyPrice", JSON.stringify(res));
     });
   }, []);
+
+  useEffect(() => {
+    const stocksData = window.localStorage.getItem("stocks");
+    const monthlyPriceData = window.localStorage.getItem("monthlyPrice");
+    setStocks(JSON.parse(stocksData));
+    setmonthlyPrice(JSON.parse(monthlyPriceData));
+  }, []);
+
   return (
     <div>
       <AuthProvider>
@@ -62,7 +70,13 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/buyernest" element={<Sidebar />}>
-            <Route index element={<StockList stocks={stocks} monthlyPrices={monthlyPrice} />}/>
+            <Route index element={<Insights />} />
+            <Route
+              path="stocks"
+              element={
+                <StockList stocks={stocks} monthlyPrices={monthlyPrice} />
+              }
+            />
           </Route>
           <Route path="/learn" element={<Learn />} />
         </Routes>
