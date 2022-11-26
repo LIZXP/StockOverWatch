@@ -16,6 +16,7 @@ import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
 import Learn from "./components/learn/Learn";
 import Insights from "./components/buyerNest/insights/Insights";
+import Support from "./components/support/Support";
 
 /* eslint-disable */
 function App() {
@@ -69,6 +70,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/buyernest" element={<Sidebar />}>
             <Route index element={<Insights />} />
             <Route
