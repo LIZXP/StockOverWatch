@@ -34,7 +34,7 @@ function Navbar({ stocks }) {
         <Link className="nav-link" to="/login">
           Sign in
         </Link>
-
+        {/* need to add signup link */}
         <Link className="nav-link" to="/signup">
           Sign up
         </Link>
