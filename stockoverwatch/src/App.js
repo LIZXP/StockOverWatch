@@ -17,6 +17,7 @@ import Sidebar from "./components/buyerNest/sidebar/Sidebar";
 import Learn from "./components/learn/Learn";
 import Insights from "./components/buyerNest/insights/Insights";
 import Support from "./components/support/Support";
+import UserProfile from "./components/buyerNest/userProfile/UserProfile";
 
 /* eslint-disable */
 function App() {
@@ -79,6 +80,7 @@ function App() {
                 <StockList stocks={stocks} monthlyPrices={monthlyPrice} />
               }
             />
+            <Route path="profile" element={<UserProfile />} />
           </Route>
           <Route path="/learn" element={<Learn />} />
         </Routes>
