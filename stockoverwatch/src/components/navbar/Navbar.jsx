@@ -13,7 +13,7 @@ function Navbar({ stocks }) {
         <Link className="nav-link" to="/">
           Home
         </Link>
-
+        {/* finsh the link */}
         <Link className="nav-link" to="/buyernest">
           Buyer Nest
         </Link>
