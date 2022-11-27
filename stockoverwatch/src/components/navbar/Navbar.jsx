@@ -13,11 +13,11 @@ function Navbar({ stocks }) {
         <Link className="nav-link" to="/">
           Home
         </Link>
-
+        {/* finsh the link */}
         <Link className="nav-link" to="/buyernest">
           Buyer Nest
         </Link>
-
+        {/* need to get the learn page */}
         <Link className="nav-link" to="/">
           Learn
         </Link>
@@ -34,7 +34,7 @@ function Navbar({ stocks }) {
         <Link className="nav-link" to="/login">
           Sign in
         </Link>
-
+        {/* need to add signup link */}
         <Link className="nav-link" to="/signup">
           Sign up
         </Link>
