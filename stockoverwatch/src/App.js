@@ -46,10 +46,8 @@ function App() {
   useEffect(() => {
     Promise.all(stocksPriceDataFinn()).then((res) => {
       window.localStorage.setItem("stocks", JSON.stringify(res));
+      window.localStorage.setItem("time", Date.now());
     });
-  }, []);
-
-  useEffect(() => {
     Promise.all(monthStockPriceFinn()).then((res) => {
       window.localStorage.setItem("monthlyPrice", JSON.stringify(res));
     });
