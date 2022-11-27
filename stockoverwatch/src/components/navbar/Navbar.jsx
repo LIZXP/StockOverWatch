@@ -17,7 +17,7 @@ function Navbar({ stocks }) {
         <Link className="nav-link" to="/buyernest">
           Buyer Nest
         </Link>
-
+        {/* need to get the learn page */}
         <Link className="nav-link" to="/">
           Learn
         </Link>
