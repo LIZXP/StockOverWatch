@@ -47,9 +47,6 @@ function App() {
     const timeNow = Date.now();
     const prevTime = window.localStorage.getItem("time");
     const timeDiff = timeNow - prevTime;
-    console.log("time now", timeNow);
-    console.log("prev", prevTime);
-    console.log("timediff", timeDiff);
     const stocksData = window.localStorage.getItem("stocks");
     if (!stocksData || stocksData[0] === null || timeDiff > 31000) {
       Promise.all(stocksPriceDataFinn()).then((res) => {
