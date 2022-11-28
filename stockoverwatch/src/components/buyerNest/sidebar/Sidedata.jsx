@@ -28,6 +28,6 @@ export const Sidedata = [
   {
     title: "Profile",
     icon: <ManageAccountsTwoToneIcon />,
-    link: "/",
+    link: "/buyernest/profile",
   },
 ];

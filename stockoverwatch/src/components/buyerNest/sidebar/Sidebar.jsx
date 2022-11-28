@@ -20,7 +20,8 @@ function Sidebar({ stocks }) {
                 key={i}
                 className="row"
                 id={window.location.pathname === valid.link ? "active" : ""}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   window.location.pathname = data.link;
                 }}
               >
