@@ -44,13 +44,22 @@ function App() {
   }, []);
 
   useEffect(() => {
-    Promise.all(stocksPriceDataFinn()).then((res) => {
-      window.localStorage.setItem("stocks", JSON.stringify(res));
-      window.localStorage.setItem("time", Date.now());
-    });
-    Promise.all(monthStockPriceFinn()).then((res) => {
-      window.localStorage.setItem("monthlyPrice", JSON.stringify(res));
-    });
+    const timeNow = Date.now();
+    const prevTime = window.localStorage.getItem("time");
+    const timeDiff = timeNow - prevTime;
+    console.log("time now", timeNow);
+    console.log("prev", prevTime);
+    console.log("timediff", timeDiff);
+    const stocksData = window.localStorage.getItem("stocks");
+    if (!stocksData || stocksData[0] === null || timeDiff > 31000) {
+      Promise.all(stocksPriceDataFinn()).then((res) => {
+        window.localStorage.setItem("stocks", JSON.stringify(res));
+        window.localStorage.setItem("time", Date.now());
+      });
+      Promise.all(monthStockPriceFinn()).then((res) => {
+        window.localStorage.setItem("monthlyPrice", JSON.stringify(res));
+      });
+    }
   }, []);
 
   useEffect(() => {
