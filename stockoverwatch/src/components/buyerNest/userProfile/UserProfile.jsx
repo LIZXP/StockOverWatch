@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./userprofile.styles.scss";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import EmailIcon from "@mui/icons-material/Email";
@@ -9,6 +9,9 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 function UserProfile() {
+  const [userInfo, setUserInfo] = useState({
+    username: "",
+  });
   return (
     <div className="profile-container">
       <div className="profile-box">
