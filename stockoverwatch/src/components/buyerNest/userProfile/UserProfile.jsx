@@ -7,7 +7,6 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import WalletIcon from "@mui/icons-material/Wallet";
 
 function UserProfile() {
   return (
@@ -111,15 +110,6 @@ function UserProfile() {
                 placeholder="instagram..."
                 className="instagram"
               />
-            </div>
-          </div>
-          <div className="form-box-input-social">
-            <label htmlFor="wallet">Wallet</label>
-            <div className="form-box-input-box">
-              <div className="email-icon">
-                <WalletIcon />
-              </div>
-              <input type="text" placeholder="wallet..." className="wallet" />
             </div>
           </div>
         </form>
