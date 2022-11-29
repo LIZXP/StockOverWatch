@@ -5,7 +5,6 @@ import {
   stocksPriceDataFinn,
   monthStockPriceFinn,
 } from "./helper/helperFunctions.js";
-
 import { AuthProvider } from "./contexts/AuthContext";
 import { Routes, Route } from "react-router-dom";
 import Signup from "./components/signup/SignUp";
@@ -17,6 +16,10 @@ import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
 import Learn from "./components/learn/Learn";
 import Account from "./components/account/Account";
+import Insights from "./components/buyerNest/insights/Insights";
+import Support from "./components/support/Support";
+import UserProfile from "./components/buyerNest/userProfile/UserProfile";
+
 /* eslint-disable */
 
 function App() {
@@ -43,16 +46,28 @@ function App() {
   }, []);
 
   useEffect(() => {
-    Promise.all(stocksPriceDataFinn()).then((res) => {
-      setStocks(res);
-    });
+    const timeNow = Date.now();
+    const prevTime = window.localStorage.getItem("time");
+    const timeDiff = timeNow - prevTime;
+    const stocksData = window.localStorage.getItem("stocks");
+    if (!stocksData || stocksData[0] === null || timeDiff > 31000) {
+      Promise.all(stocksPriceDataFinn()).then((res) => {
+        window.localStorage.setItem("stocks", JSON.stringify(res));
+        window.localStorage.setItem("time", Date.now());
+      });
+      Promise.all(monthStockPriceFinn()).then((res) => {
+        window.localStorage.setItem("monthlyPrice", JSON.stringify(res));
+      });
+    }
   }, []);
 
   useEffect(() => {
-    Promise.all(monthStockPriceFinn()).then((res) => {
-      setmonthlyPrice(res);
-    });
+    const stocksData = window.localStorage.getItem("stocks");
+    const monthlyPriceData = window.localStorage.getItem("monthlyPrice");
+    setStocks(JSON.parse(stocksData));
+    setmonthlyPrice(JSON.parse(monthlyPriceData));
   }, []);
+
   return (
     <div>
       <AuthProvider>
@@ -62,8 +77,16 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/buyernest" element={<Sidebar />}>
-            <Route index element={<StockList stocks={stocks} monthlyPrices={monthlyPrice} />}/>
+            <Route index element={<Insights />} />
+            <Route
+              path="stocks"
+              element={
+                <StockList stocks={stocks} monthlyPrices={monthlyPrice} />
+              }
+            />
+            <Route path="profile" element={<UserProfile />} />
           </Route>
           <Route path="/learn" element={<Learn />} />
           <Route path="/account" element={<Account />}></Route>

@@ -18,7 +18,7 @@ export const Sidedata = [
   {
     title: "Stocks",
     icon: <ShowChartTwoToneIcon />,
-    link: "/",
+    link: "/buyernest/stocks",
   },
   {
     title: "Insights",
@@ -28,6 +28,6 @@ export const Sidedata = [
   {
     title: "Profile",
     icon: <ManageAccountsTwoToneIcon />,
-    link: "/",
+    link: "/buyernest/profile",
   },
 ];

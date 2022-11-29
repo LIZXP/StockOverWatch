@@ -1,5 +1,6 @@
 import React, { Fragment, useRef, useState } from "react";
 import "./StockList.styles.scss";
+/* eslint-disable */
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import stockData from "../../../stockData";

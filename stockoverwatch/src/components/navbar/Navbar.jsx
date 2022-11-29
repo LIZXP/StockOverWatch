@@ -13,11 +13,9 @@ function Navbar({ stocks }) {
         <Link className="nav-link" to="/">
           Home
         </Link>
-
         <Link className="nav-link" to="/buyernest">
           Buyer Nest
         </Link>
-
         <Link className="nav-link" to="/">
           Learn
         </Link>
@@ -26,7 +24,7 @@ function Navbar({ stocks }) {
           News
         </Link>
 
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/support">
           Support
         </Link>
       </div>
@@ -34,7 +32,6 @@ function Navbar({ stocks }) {
         <Link className="nav-link" to="/login">
           Sign in
         </Link>
-
         <Link className="nav-link" to="/signup">
           Sign up
         </Link>
