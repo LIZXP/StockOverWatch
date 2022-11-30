@@ -22,6 +22,12 @@ const useForm = () => {
       if (!userInfo.exists()) {
         await setDoc(docRef, infoObj);
         console.log("New Doc create");
+      } else if (userInfo.exists()) {
+        const updateInfoObj = Object.fromEntries(
+          Object.entries(infoObj).filter(([_, v]) => v != null)
+        );
+        await updateDoc(docRef, updateInfoObj);
+        console.log("userInfo updated");
       }
     } catch (err) {
       console.error(err);
