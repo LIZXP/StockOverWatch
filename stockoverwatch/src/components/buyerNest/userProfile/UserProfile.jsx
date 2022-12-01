@@ -1,34 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
 import "./userprofile.styles.scss";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
-import EmailIcon from "@mui/icons-material/Email";
 import LanguageIcon from "@mui/icons-material/Language";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-
+import useForm from "../../../userData";
 function UserProfile() {
-  const [userInfo, setUserInfo] = useState({
-    username: "",
-  });
+  const { values, handleSubmit, onChange } = useForm();
+
   return (
     <div className="profile-container">
       <div className="profile-box">
         <div className="account-info">
           <h1>Profile Settings</h1>
           <p>
-            You can change your display name, change your profile picture and
-            manage your social media accounts.
+            You can change your display name, change your profile picture and manage your social media accounts.
           </p>
         </div>
-        <form>
+        <form onSubmit={handleSubmit}>
           {/* use map function to get the user info */}
           <div className="user-info-image">
-            <img
-              src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
-              alt="user-icon"
-            />
+            <div className="input-image">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
+                alt="user-icon"
+              />
+              <input
+                type="text"
+                placeholder="input the img url..."
+                name="icon"
+              />
+            </div>
             <div className="form-box-input">
               <label htmlFor="name">Username</label>
               <div className="form-box-input-box">
@@ -37,19 +41,11 @@ function UserProfile() {
                 </div>
                 <input
                   type="text"
-                  placeholder="userName..."
+                  placeholder={"userName..."}
                   className="user-input"
-                />
-              </div>
-              <label htmlFor="email">Email</label>
-              <div className="form-box-input-box">
-                <div className="email-icon">
-                  <EmailIcon />
-                </div>
-                <input
-                  type="text"
-                  placeholder="email..."
-                  className="user-input"
+                  name="username"
+                  value={values.username}
+                  onChange={onChange}
                 />
               </div>
             </div>
@@ -64,6 +60,9 @@ function UserProfile() {
                 type="text"
                 placeholder="https://..."
                 className="website"
+                name="website"
+                value={values.website}
+                onChange={onChange}
               />
             </div>
           </div>
@@ -77,6 +76,9 @@ function UserProfile() {
                 type="text"
                 placeholder="linkedin..."
                 className="linkedin"
+                name="linkedin"
+                value={values.linkedin}
+                onChange={onChange}
               />
             </div>
           </div>
@@ -90,6 +92,9 @@ function UserProfile() {
                 type="text"
                 placeholder="facebook..."
                 className="facebook"
+                name="facebook"
+                value={values.facebook}
+                onChange={onChange}
               />
             </div>
           </div>
@@ -99,7 +104,14 @@ function UserProfile() {
               <div className="email-icon">
                 <TwitterIcon />
               </div>
-              <input type="text" placeholder="twitter..." className="twitter" />
+              <input
+                type="text"
+                placeholder="twitter..."
+                className="twitter"
+                name="twitter"
+                value={values.twitter}
+                onChange={onChange}
+              />
             </div>
           </div>
           <div className="form-box-input-social">
@@ -112,9 +124,13 @@ function UserProfile() {
                 type="text"
                 placeholder="instagram..."
                 className="instagram"
+                name="instagram"
+                value={values.instagram}
+                onChange={onChange}
               />
             </div>
           </div>
+          <button type="submit">Submit</button>
         </form>
       </div>
     </div>

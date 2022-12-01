@@ -6,7 +6,7 @@ import { Line } from "react-chartjs-2";
 import stockData from "../../../stockData";
 import { useAuth } from "../../../contexts/AuthContext";
 
-function StockList({ stocks, monthlyPrices, }) {
+function StockList({ stocks, monthlyPrices }) {
   const auth = useAuth();
 
   if (stocks.length === 0 || monthlyPrices.length === 0) {
@@ -16,9 +16,9 @@ function StockList({ stocks, monthlyPrices, }) {
   return (
     <div className="StockList">
       {stocks.map((stock, i) => {
-      return StockListItem(stock, i, auth, monthlyPrices);
+        return StockListItem(stock, i, auth, monthlyPrices);
       })}
-    </div >
+    </div>
   );
 }
 
@@ -37,12 +37,12 @@ const buyStock = async (e, stock, uid, quantity) => {
     stock: stock.symbol,
     price: stock.c,
     quantity: quantity,
-    dop: new Date()
-  }
+    dop: new Date(),
+  };
 
   try {
     await stockData.addStock(purchasedStock);
-    console.log(`you have purchased stock from ${stock.symbol}...`)
+    console.log(`you have purchased stock from ${stock.symbol}...`);
   } catch (err) {
     console.error(err);
   }
@@ -82,9 +82,7 @@ function StockListItem(stock, i, auth, monthlyPrices) {
                   Change: {stock.d.toFixed(2)} &uarr;
                 </li>
               ) : (
-                <li className="red-num">
-                  Change: {stock.d.toFixed(2)} &darr;
-                </li>
+                <li className="red-num">Change: {stock.d.toFixed(2)} &darr;</li>
               )}
               <span className="price-right">
                 <li>Close price: {stock.pc.toFixed(2)}</li>
@@ -100,14 +98,28 @@ function StockListItem(stock, i, auth, monthlyPrices) {
               </span>
             </ul>
             <div className="quantity-btn flex justify-center items-space-evenly gap-3">
-              <input type="number" className="text-black-500" min={0} ref={quantityRef} />
+              <input
+                type="number"
+                className="text-black-500"
+                min={0}
+                ref={quantityRef}
+              />
               <button
                 className="buy-btn"
                 type="button"
                 onClick={(e) => {
-                  buyStock(e, stock, auth.currentUser.uid, quantityRef.current.value);
+                  buyStock(
+                    e,
+                    stock,
+                    auth.currentUser.uid,
+                    quantityRef.current.value
+                  );
                   quantityRef.current.value = 0;
-                }}> BUY </button>
+                }}
+              >
+                {" "}
+                BUY{" "}
+              </button>
             </div>
           </div>
         </div>
