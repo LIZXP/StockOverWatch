@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./userprofile.styles.scss";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -6,12 +6,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import { useAuth } from "../../../contexts/AuthContext";
 import useForm from "../../../userData";
 function UserProfile() {
-  const currentUser = useAuth().currentUser;
   const { values, handleSubmit, onChange } = useForm();
-  console.log(currentUser);
 
   return (
     <div className="profile-container">
@@ -19,8 +16,7 @@ function UserProfile() {
         <div className="account-info">
           <h1>Profile Settings</h1>
           <p>
-            You can change your display name, change your profile picture and
-            manage your social media accounts.
+            You can change your display name, change your profile picture and manage your social media accounts.
           </p>
         </div>
         <form onSubmit={handleSubmit}>
@@ -45,7 +41,7 @@ function UserProfile() {
                 </div>
                 <input
                   type="text"
-                  placeholder="userName..."
+                  placeholder={"userName..."}
                   className="user-input"
                   name="username"
                   value={values.username}

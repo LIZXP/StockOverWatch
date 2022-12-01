@@ -24,7 +24,7 @@ const useForm = () => {
         console.log("New Doc create");
       } else if (userInfo.exists()) {
         const updateInfoObj = Object.fromEntries(
-          Object.entries(infoObj).filter(([_, v]) => v != null)
+          Object.entries(infoObj).filter(([_, v]) => v !== "")
         );
         await updateDoc(docRef, updateInfoObj);
         console.log("userInfo updated");
@@ -42,6 +42,7 @@ const useForm = () => {
     const { name, value } = e.target;
     setValues({ ...values, [name]: value });
   };
+
   return { values, handleSubmit, onChange };
 };
 
