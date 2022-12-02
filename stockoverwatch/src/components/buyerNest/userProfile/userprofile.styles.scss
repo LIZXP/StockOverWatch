@@ -1,16 +1,16 @@
 .profile-container {
   margin-left: 15%;
   background: whitesmoke;
-  padding-left: 10%;
+  padding-left: 5%;
   height: 100vh;
   width: 100%;
   font-size: 1.5rem;
   padding-top: 3rem;
   .account-info {
-    padding-left: 0;
   }
   .form-box-input {
-    padding-top: 1rem;
+    padding-top: 2rem;
+    padding-left: 15%;
     .form-box-input-box {
       display: flex;
       flex-direction: row;
@@ -24,7 +24,8 @@
   .social-box {
     padding-top: 3rem;
     font-size: 1rem;
-    padding-left: 2rem;
+    padding-left: 20%;
+    padding-bottom: 3rem;
     .form-box-input-social {
       .form-box-input-box {
         display: flex;
