@@ -49,4 +49,15 @@
       }
     }
   }
+  form .btn-1 {
+    background: red;
+    width: 6rem;
+    height: 2.5rem;
+    margin-left: 23%;
+    border: none;
+    color: whitesmoke;
+    border-radius: 6px;
+    transition: ease-out 0.3s;
+    text-align: center;
+  }
 }

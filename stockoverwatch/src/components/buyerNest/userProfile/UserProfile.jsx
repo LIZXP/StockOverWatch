@@ -138,7 +138,9 @@ function UserProfile() {
               </div>
             </div>
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit" className="btn-1">
+            Submit
+          </button>
         </form>
       </div>
     </div>
