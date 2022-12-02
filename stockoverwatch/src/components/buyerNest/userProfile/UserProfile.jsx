@@ -1,5 +1,6 @@
 import React from "react";
 import "./userprofile.styles.scss";
+import PhotoSizeSelectActualIcon from "@mui/icons-material/PhotoSizeSelectActual";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LanguageIcon from "@mui/icons-material/Language";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
@@ -16,22 +17,27 @@ function UserProfile() {
         <div className="account-info">
           <h1>Profile Settings</h1>
           <p>
-            You can change your display name, change your profile picture and manage your social media accounts.
+            You can change your display name, change your profile picture and
+            manage your social media accounts.
           </p>
         </div>
         <form onSubmit={handleSubmit}>
           {/* use map function to get the user info */}
-          <div className="user-info-image">
+          <div className="form-box-input">
             <div className="input-image">
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png"
-                alt="user-icon"
-              />
-              <input
-                type="text"
-                placeholder="input the img url..."
-                name="icon"
-              />
+              <label htmlFor="name">Avartar</label>
+              <div className="form-box-input-box">
+                <div className="user-icon">
+                  <PhotoSizeSelectActualIcon />
+                </div>
+                <input
+                  type="text"
+                  placeholder="input the img url..."
+                  name="icon"
+                  value={values.icon}
+                  onChange={onChange}
+                />
+              </div>
             </div>
             <div className="form-box-input">
               <label htmlFor="name">Username</label>
