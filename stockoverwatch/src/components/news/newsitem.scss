@@ -1,15 +1,124 @@
 .news-app {
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
+  justify-content: center;
+  // width: 100%;
+}
+
+:root {
+  --font-basic: sans-serif;
+  --white: #fefbfb;
+  --white-smoke: #c4c4c4;
+  --dark: #13131f;
+}
+
+body {
+  background-color: var(--dark);
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
-.news-item {
-  width: 500px;
-  padding: 20px;
-  border: 1px solid;
-  margin-bottom: 20px;
+/* IMGS BUTTON */
+.img-btn {
+  width: 8rem;
+  min-height: 2.5rem;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  border: none;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--font-basic);
+  font-size: 1.4rem;
 }
 
-.news-img {
-  width: 400px;
+/* IMAGE HOVER EFFECT */
+.scroll-img {
+  transition: all 0.3s ease;
+  filter: brightness(0.8);
+}
+
+.scroll-img:hover {
+  filter: brightness(1);
+}
+
+/* SCROLL IMAGES CONTAINER */
+.scroll-imgs-container {
+  margin-top: 5rem;
+  max-height: 60rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 800px;
+}
+
+.scroll-img {
+  position: relative;
+  overflow: hidden;
+  // width: 100%;
+  max-width: 20rem;
+  min-height: 15.1rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.scroll-img-item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
+}
+
+.scroll-img-texts {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0rem 0rem 0rem 1.5rem;
+  align-items: flex-end;
+}
+
+.scroll-img-title {
+  color: var(--white);
+  font-family: var(--font-basic);
+  font-size: 1.3rem;
+  line-height: 2rem;
+}
+
+.scroll-img-text {
+  font-family: var(--font-basic);
+  color: var(--white-smoke);
+  font-size: 1rem;
+  line-height: 1.6rem;
+}
+
+.scroll-img-date {
+  font-family: var(--font-basic);
+  font-weight: 600;
+  color: var(--white-smoke);
+  line-height: 2rem;
+}
+
+.scroll-btn {
+  background: green;
+  border-radius: 0.3rem;
+  width: 10rem;
+  min-height: 2.5rem;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.scroll-btn:hover {
+  transform: scale(0.9);
+}
+
+.scroll-btn a {
+  font-family: var(--font-basic);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--white);
 }

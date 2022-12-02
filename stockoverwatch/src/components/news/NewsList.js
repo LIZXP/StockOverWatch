@@ -14,19 +14,21 @@ export default function NewsList () {
 
         getNews()
     }, [])
-
     return (
         <div>
-            {data.map(data => {
-                return(
-                    <NewsItem
+            {data.slice(0,10).map(data => {
+                
+                    return(
+                        <NewsItem
                         key= {data.id}
                         headline={data.headline}
                         summary={data.summary}
                         url={data.url}
-                        image={data.image} 
-                    />
-                )
+                        image={data.image}
+                        datetime= {(new Date((data.datetime)*1000)).toString()}
+                        />
+                        )
+                    
             })}
         </div>
     )
