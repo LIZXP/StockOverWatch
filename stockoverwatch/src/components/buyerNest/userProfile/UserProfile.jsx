@@ -139,7 +139,7 @@ function UserProfile() {
             </div>
           </div>
           <button type="submit" className="btn-1">
-            Submit
+            SUBMIT
           </button>
         </form>
       </div>
