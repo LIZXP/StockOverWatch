@@ -5,8 +5,19 @@
   height: 100vh;
   width: 100%;
   font-size: 1.5rem;
-  padding-top: 3rem;
-  .account-info {
+  padding-top: 2rem;
+  .profile-box {
+    .account-info {
+      padding-bottom: 1rem;
+      h1 {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+      p {
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+    }
   }
   .form-box-input {
     padding-top: 2rem;
