@@ -39,7 +39,7 @@ function UserProfile() {
                 />
               </div>
             </div>
-            <div className="form-box-input">
+            <div className="input-username">
               <label htmlFor="name">Username</label>
               <div className="form-box-input-box">
                 <div className="user-icon">
@@ -47,7 +47,7 @@ function UserProfile() {
                 </div>
                 <input
                   type="text"
-                  placeholder={"userName..."}
+                  placeholder={"username..."}
                   className="user-input"
                   name="username"
                   value={values.username}
@@ -56,84 +56,86 @@ function UserProfile() {
               </div>
             </div>
           </div>
-          <div className="form-box-input-social">
-            <label htmlFor="website">Website</label>
-            <div className="form-box-input-box">
-              <div className="email-icon">
-                <LanguageIcon />
+          <div className="social-box">
+            <div className="form-box-input-social">
+              <label htmlFor="website">Website</label>
+              <div className="form-box-input-box">
+                <div className="email-icon">
+                  <LanguageIcon />
+                </div>
+                <input
+                  type="text"
+                  placeholder="https://..."
+                  className="website"
+                  name="website"
+                  value={values.website}
+                  onChange={onChange}
+                />
               </div>
-              <input
-                type="text"
-                placeholder="https://..."
-                className="website"
-                name="website"
-                value={values.website}
-                onChange={onChange}
-              />
             </div>
-          </div>
-          <div className="form-box-input-social">
-            <label htmlFor="linkedin">LinkedIn</label>
-            <div className="form-box-input-box">
-              <div className="email-icon">
-                <LinkedInIcon />
+            <div className="form-box-input-social">
+              <label htmlFor="linkedin">LinkedIn</label>
+              <div className="form-box-input-box">
+                <div className="email-icon">
+                  <LinkedInIcon />
+                </div>
+                <input
+                  type="text"
+                  placeholder="linkedin..."
+                  className="linkedin"
+                  name="linkedin"
+                  value={values.linkedin}
+                  onChange={onChange}
+                />
               </div>
-              <input
-                type="text"
-                placeholder="linkedin..."
-                className="linkedin"
-                name="linkedin"
-                value={values.linkedin}
-                onChange={onChange}
-              />
             </div>
-          </div>
-          <div className="form-box-input-social">
-            <label htmlFor="facebook">Facebook</label>
-            <div className="form-box-input-box">
-              <div className="email-icon">
-                <FacebookIcon />
+            <div className="form-box-input-social">
+              <label htmlFor="facebook">Facebook</label>
+              <div className="form-box-input-box">
+                <div className="email-icon">
+                  <FacebookIcon />
+                </div>
+                <input
+                  type="text"
+                  placeholder="facebook..."
+                  className="facebook"
+                  name="facebook"
+                  value={values.facebook}
+                  onChange={onChange}
+                />
               </div>
-              <input
-                type="text"
-                placeholder="facebook..."
-                className="facebook"
-                name="facebook"
-                value={values.facebook}
-                onChange={onChange}
-              />
             </div>
-          </div>
-          <div className="form-box-input-social">
-            <label htmlFor="twitter">Twitter</label>
-            <div className="form-box-input-box">
-              <div className="email-icon">
-                <TwitterIcon />
+            <div className="form-box-input-social">
+              <label htmlFor="twitter">Twitter</label>
+              <div className="form-box-input-box">
+                <div className="email-icon">
+                  <TwitterIcon />
+                </div>
+                <input
+                  type="text"
+                  placeholder="twitter..."
+                  className="twitter"
+                  name="twitter"
+                  value={values.twitter}
+                  onChange={onChange}
+                />
               </div>
-              <input
-                type="text"
-                placeholder="twitter..."
-                className="twitter"
-                name="twitter"
-                value={values.twitter}
-                onChange={onChange}
-              />
             </div>
-          </div>
-          <div className="form-box-input-social">
-            <label htmlFor="instagram">Instagram</label>
-            <div className="form-box-input-box">
-              <div className="email-icon">
-                <InstagramIcon />
+            <div className="form-box-input-social">
+              <label htmlFor="instagram">Instagram</label>
+              <div className="form-box-input-box">
+                <div className="email-icon">
+                  <InstagramIcon />
+                </div>
+                <input
+                  type="text"
+                  placeholder="instagram..."
+                  className="instagram"
+                  name="instagram"
+                  value={values.instagram}
+                  onChange={onChange}
+                />
               </div>
-              <input
-                type="text"
-                placeholder="instagram..."
-                className="instagram"
-                name="instagram"
-                value={values.instagram}
-                onChange={onChange}
-              />
             </div>
           </div>
           <button type="submit">Submit</button>
