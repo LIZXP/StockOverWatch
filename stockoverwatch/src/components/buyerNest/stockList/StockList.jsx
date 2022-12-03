@@ -1,10 +1,11 @@
-import React, { Fragment, useRef, useState } from "react";
+import React, { Fragment, useRef, useState, useEffect } from "react";
 import "./StockList.styles.scss";
 /* eslint-disable */
 import Chart from "chart.js/auto";
 import { Line } from "react-chartjs-2";
 import stockData from "../../../stockData";
 import { useAuth } from "../../../contexts/AuthContext";
+import useUserProfile from "../../../userProfile";
 
 function StockList({ stocks, monthlyPrices }) {
   const auth = useAuth();
@@ -24,32 +25,28 @@ function StockList({ stocks, monthlyPrices }) {
 
 export default StockList;
 
-const buyStock = async (e, stock, uid, quantity) => {
-  console.log("buy stock excuted", stock);
-  e.preventDefault();
-  if (!stock) {
-    console.error();
-    return;
-  }
-
-  const purchasedStock = {
-    user: uid,
-    stock: stock.symbol,
-    price: stock.c,
-    quantity: quantity,
-    dop: new Date(),
-  };
-
-  try {
-    await stockData.addStock(purchasedStock);
-    console.log(`you have purchased stock from ${stock.symbol}...`);
-  } catch (err) {
-    console.error(err);
-  }
-};
+//----------------------------->
 
 function StockListItem(stock, i, auth, monthlyPrices) {
   const quantityRef = useRef();
+  const { updateUserProfile, getUserProfile } = useUserProfile();
+  const [totalFunds, setTotalFunds] = useState(0);
+
+  useEffect(() => {
+    getUserProfile().then(profile => {
+      console.log(profile);
+      setTotalFunds(parseFloat(profile.funds));
+    }).catch(error => {
+      console.error(error);
+    })
+  }, []);
+
+  const updateFunds = async (funds) => {
+    await updateUserProfile({
+      funds: parseFloat(funds)
+    });
+    setTotalFunds(funds);
+  };
 
   const monthlyPriceData = {
     labels: monthlyPrices[i].t.map((timeStamp) => {
@@ -67,6 +64,35 @@ function StockListItem(stock, i, auth, monthlyPrices) {
       },
     ],
   };
+
+  const buyStock = async (e, stock, uid, quantity) => {
+    console.log("buy stock excuted", stock);
+    e.preventDefault();
+    if (!stock) {
+      console.error();
+      return;
+    }
+    if (totalFunds < (stock.c * quantity)) {
+      alert("Insufficient Funds.")
+      return;
+    }
+    const purchasedStock = {
+      user: uid,
+      stock: stock.symbol,
+      price: stock.c,
+      quantity: quantity,
+      dop: new Date(),
+    };
+  
+    try {
+      await stockData.addStock(purchasedStock);
+      updateFunds(totalFunds - (stock.c * quantity));
+      console.log(`you have purchased stock from ${stock.symbol}...`);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <Fragment key={i}>
       <div className="price-chart-container">

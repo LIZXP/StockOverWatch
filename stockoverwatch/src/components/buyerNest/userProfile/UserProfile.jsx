@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./userprofile.styles.scss";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -6,9 +6,21 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import useForm from "../../../userData";
+import useUserProfile from "../../../userProfile";
+
 function UserProfile() {
-  const { values, handleSubmit, onChange } = useForm();
+  const [values, setValues] = useState({});
+  const { updateUserProfile } = useUserProfile();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await updateUserProfile(values);
+  }
+
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setValues({ ...values, [name]: value });
+  };
 
   return (
     <div className="profile-container">

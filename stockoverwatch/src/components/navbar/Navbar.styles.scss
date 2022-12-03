@@ -14,20 +14,28 @@
   font-family: "Playfair Display", serif, sans-serif;
 }
 
-.nav-links-container {
+.nav-title {
+  font-family: Sono, sans-serif;
+  color: white;
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+.nav-link {
   display: flex;
   flex-direction: row;
   grid-template-columns: repeat(5, 1fr);
   gap: 4rem;
   align-items: center;
 }
-.nav-links-container .nav-link {
+ .nav-link {
+  font-family: Sono, sans-serif;
   flex-direction: row;
   color: whitesmoke;
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
 }
-.user-login {
+.nav-link {
   justify-self: flex-end;
   a {
     padding: 10px;
@@ -35,16 +43,41 @@
     border-radius: 1rem;
   }
 }
-.user-login .nav-link {
-  color: #232a32;
+ .nav-link {
+  color: whitesmoke;
+  font-family: Sono, sans-serif;
   font-size: 0.8rem;
   font-weight: 600;
   margin-right: 15px;
 }
 
-.nav-links-container .nav-link:hover {
+.nav-link:hover {
   color: #17d158;
 }
-.user-login .nav-link:hover {
+.nav-link:hover {
+  color: #17d158;
+}
+
+.logout-btn {
+  justify-self: flex-end;
+  font-family: Sono, sans-serif;
+  font-weight: 800;
+  padding: 10px;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+}
+
+.user-login .logout-btn {
+  color: whitesmoke;
+  font-family: Sono, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  // margin-right: 15px;
+}
+
+.logout-btn:hover {
+  color: #17d158;
+}
+.logout-btn:hover {
   color: #17d158;
 }
