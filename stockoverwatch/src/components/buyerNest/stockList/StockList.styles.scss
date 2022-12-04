@@ -11,6 +11,7 @@
   background-color: #232a32;
   .price-chart-container {
     display: flex;
+    flex-direction: row;
     align-items: center;
     margin-left: 10rem;
     margin-top: 0.2rem;
@@ -19,28 +20,16 @@
     padding-left: 1rem;
     padding-right: 1rem;
     border-radius: 5px;
+    .price-list .price-detail ul {
+      list-style: none;
+      text-align: left;
+      display: flex;
+      flex-direction: row;
+    }
   }
   .price-chart-container:hover {
     background-color: rgb(70, 72, 72);
     border-right: 3px solid greenyellow;
-  }
-  .price-chart-container .price {
-    display: flex;
-    ul {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      padding-right: 3rem;
-      margin-right: auto;
-    }
-    .price-left {
-      display: flex;
-      flex-direction: row;
-    }
-    .price-right {
-      display: flex;
-      flex-direction: row;
-    }
   }
 
   .myChart {
@@ -48,28 +37,24 @@
     height: 13rem !important;
   }
 }
-.price-list .price-detail ul {
-  list-style: none;
-  text-align: left;
-  display: inline;
-}
 
 .quantity-btn {
   color: black;
-} 
+}
 
 /* CSS */
 .buy-btn {
   appearance: none;
   background-color: #2ea44f;
-  border: 1px solid rgba(27, 31, 35, .15);
+  border: 1px solid rgba(27, 31, 35, 0.15);
   border-radius: 6px;
-  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-shadow: rgba(27, 31, 35, 0.1) 0 1px 0;
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   font-size: 14px;
   font-weight: 600;
   line-height: 20px;
@@ -94,18 +79,18 @@
 }
 
 .buy-btn:focus {
-  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  box-shadow: rgba(46, 164, 79, 0.4) 0 0 0 3px;
   outline: none;
 }
 
 .buy-btn:disabled {
   background-color: #94d3a2;
-  border-color: rgba(27, 31, 35, .1);
-  color: rgba(255, 255, 255, .8);
+  border-color: rgba(27, 31, 35, 0.1);
+  color: rgba(255, 255, 255, 0.8);
   cursor: default;
 }
 
 .buy-btn:active {
   background-color: #298e46;
-  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+  box-shadow: rgba(20, 70, 32, 0.2) 0 1px 0 inset;
 }
