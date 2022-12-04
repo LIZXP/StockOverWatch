@@ -51,7 +51,7 @@ function App() {
     const prevTime = window.localStorage.getItem("time");
     const timeDiff = timeNow - prevTime;
     const stocksData = window.localStorage.getItem("stocks");
-    if (!stocksData || stocksData[0] === null || timeDiff > 31000) {
+    if (!stocksData || stocksData[0] === null || timeDiff > 61000) {
       Promise.all(stocksPriceDataFinn()).then((res) => {
         window.localStorage.setItem("stocks", JSON.stringify(res));
         window.localStorage.setItem("time", Date.now());

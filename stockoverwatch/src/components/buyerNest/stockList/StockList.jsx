@@ -98,11 +98,15 @@ function StockListItem(stock, i, auth, monthlyPrices) {
       <div className="price-chart-container">
         <div className="price-list">
           <div className="price-detail">
-            <h3 className="title">{stock.symbol}</h3>
+            <div className="title-img"></div>
             <ul>
-              <span className="price left">
-                <li>Current price: {stock.c.toFixed(2)}</li>
-              </span>
+              <li>
+                <img src={stock.img} alt="company-icon" />
+              </li>
+              <li>
+                <h3 className="title">{stock.symbol}</h3>
+              </li>
+              <li>Current price: {stock.c.toFixed(2)}</li>
               {stock.d > 0 ? (
                 <li className="green-num">
                   Change: {stock.d.toFixed(2)} &uarr;
@@ -110,20 +114,18 @@ function StockListItem(stock, i, auth, monthlyPrices) {
               ) : (
                 <li className="red-num">Change: {stock.d.toFixed(2)} &darr;</li>
               )}
-              <span className="price-right">
-                <li>Close price: {stock.pc.toFixed(2)}</li>
-                {(stock.dp * 10).toFixed(2) > 0 ? (
-                  <li className="green-num">
-                    Percent Change: {(stock.dp * 10).toFixed(2)}% &uarr;
-                  </li>
-                ) : (
-                  <li className="red-num">
-                    Percent Change: {(stock.dp * 10).toFixed(2)}% &darr;
-                  </li>
-                )}
-              </span>
+              <li>Close price: {stock.pc.toFixed(2)}</li>
+              {(stock.dp * 10).toFixed(2) > 0 ? (
+                <li className="green-num">
+                  Percent Change: {(stock.dp * 10).toFixed(2)}% &uarr;
+                </li>
+              ) : (
+                <li className="red-num">
+                  Percent Change: {(stock.dp * 10).toFixed(2)}% &darr;
+                </li>
+              )}
             </ul>
-            <div className="quantity-btn flex justify-center items-space-evenly gap-3">
+            <div className="quantity-btn flex justify-left items-space-evenly gap-3">
               <input
                 type="number"
                 className="text-black-500"
