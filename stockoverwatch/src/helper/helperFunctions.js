@@ -170,7 +170,7 @@ export const monthStockPriceFinn = () => {
   ];
   const baseUrl = "https://finnhub.io/api/v1/stock/candle";
   const token = "cdmjq6aad3ibvooj3ue0cdmjq6aad3ibvooj3ueg";
-  const UNIXtsFrom = "1639590164";
+  const UNIXtsFrom = "1649218068";
   const UNIXtsTo = "1670089364";
   const allPromiseCandle = [];
   const getStockPriceData = (stock) => {

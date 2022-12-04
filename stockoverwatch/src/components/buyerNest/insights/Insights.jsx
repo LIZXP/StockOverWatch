@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./Insights.styles.scss";
 /* eslint-disable */
 import Chart from "chart.js/auto";
@@ -18,26 +18,11 @@ function Insights() {
                 {
                   label: data.name,
                   data: data.c,
-                  backgroundColor: [
-                    "rgba(255, 99, 132, 0.2)",
-                    "rgba(255, 159, 64, 0.2)",
-                    "rgba(255, 205, 86, 0.2)",
-                    "rgba(75, 192, 192, 0.2)",
-                    "rgba(54, 162, 235, 0.2)",
-                  ],
-                  borderColor: [
-                    "rgb(255, 99, 132)",
-                    "rgb(255, 159, 64)",
-                    "rgb(255, 205, 86)",
-                    "rgb(75, 192, 192)",
-                    "rgb(54, 162, 235)",
-                  ],
-                  borderWidth: 1,
                 },
               ],
             };
             return (
-              <>
+              <Fragment key={i}>
                 <Line
                   data={insightData}
                   options={{
@@ -54,8 +39,9 @@ function Insights() {
                       },
                     },
                   }}
+                  className="line-chart-one"
                 />
-              </>
+              </Fragment>
             );
           })}
         </div>
@@ -67,26 +53,11 @@ function Insights() {
                 {
                   label: data.name,
                   data: data.c,
-                  backgroundColor: [
-                    "rgba(255, 99, 132, 0.2)",
-                    "rgba(255, 159, 64, 0.2)",
-                    "rgba(255, 205, 86, 0.2)",
-                    "rgba(75, 192, 192, 0.2)",
-                    "rgba(54, 162, 235, 0.2)",
-                  ],
-                  borderColor: [
-                    "rgb(255, 99, 132)",
-                    "rgb(255, 159, 64)",
-                    "rgb(255, 205, 86)",
-                    "rgb(75, 192, 192)",
-                    "rgb(54, 162, 235)",
-                  ],
-                  borderWidth: 1,
                 },
               ],
             };
             return (
-              <>
+              <Fragment key={i}>
                 <Line
                   data={insightData}
                   options={{
@@ -103,8 +74,9 @@ function Insights() {
                       },
                     },
                   }}
+                  className="line-chart-two"
                 />
-              </>
+              </Fragment>
             );
           })}
         </div>
