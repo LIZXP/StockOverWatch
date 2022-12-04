@@ -72,9 +72,14 @@ function StockListItem(stock, i, auth, monthlyPrices) {
       <div className="price-chart-container">
         <div className="price-list">
           <div className="price-detail">
-            <img src={stock.img} alt="company-icon" />
-            <h3 className="title">{stock.symbol}</h3>
+            <div className="title-img"></div>
             <ul>
+              <li>
+                <img src={stock.img} alt="company-icon" />
+              </li>
+              <li>
+                <h3 className="title">{stock.symbol}</h3>
+              </li>
               <li>Current price: {stock.c.toFixed(2)}</li>
               {stock.d > 0 ? (
                 <li className="green-num">
