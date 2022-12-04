@@ -1,4 +1,4 @@
-const marketData = [
+export const marketDataOne = [
   {
     name: "S&P 500",
     t: [
@@ -566,6 +566,9 @@ const marketData = [
       "33061.26172",
     ],
   },
+];
+
+export const marketDataTwo = [
   {
     name: "Dax Performance",
     t: [
@@ -1134,5 +1137,3 @@ const marketData = [
     ],
   },
 ];
-
-export default marketData;
