@@ -1,0 +1,147 @@
+.account-page {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  height: 100vh;
+  // justify-content: flex-end;
+}
+
+.account-header {
+  display: flex;
+  font-family: Sono, sans-serif;
+  align-items: center;
+  width: 100%;
+  color: aliceblue;
+  font-size: 60px;
+  font-weight: bolder;
+  margin-top: auto;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-cell {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: xx-large;
+}
+
+.account-body {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: white;
+  width: 100%;
+  height:700px;
+  margin-top: auto;
+}
+
+.account-cell {
+  display: flex;
+  font-family: Sono, sans-serif;
+  border: 1px solid black;
+  width: 50%;
+  height: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  padding: 1.3em 3em;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn:hover {
+  background-color: #23c483;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+.bnt:active {
+  transform: translateY(-1px);
+}
+
+.header-cell h1 {
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid green; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: green; }
+}
+
+/* CSS */
+.btn-2 {
+  appearance: none;
+  background-color: #2ea44f;
+  border: 1px solid rgba(27, 31, 35, .15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: Sono, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.btn-2:focus:not(:focus-visible):not(.focus-visible) {
+  box-shadow: none;
+  outline: none;
+}
+
+.btn-2:hover {
+  background-color: #2c974b;
+}
+
+.btn-2:focus {
+  box-shadow: rgba(46, 164, 79, .4) 0 0 0 3px;
+  outline: none;
+}
+
+.btn-2:disabled {
+  background-color: #94d3a2;
+  border-color: rgba(27, 31, 35, .1);
+  color: rgba(255, 255, 255, .8);
+  cursor: default;
+}
+
+.btn-2:active {
+  background-color: #298e46;
+  box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}

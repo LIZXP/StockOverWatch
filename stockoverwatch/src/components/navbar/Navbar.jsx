@@ -1,7 +1,14 @@
 import React from "react";
 import { Outlet, Link } from "react-router-dom";
 import "./Navbar.styles.scss";
+import { useAuth, } from "../../contexts/AuthContext";
+
 function Navbar({ stocks }) {
+  const auth = useAuth();
+  const { logout } = useAuth();
+  const isLoggedIn = auth.currentUser !== null;
+  const isLoggedOut = auth.currentUser === null;
+
   return (
     <div className="Navbar">
       <img
@@ -9,12 +16,12 @@ function Navbar({ stocks }) {
         alt="logo"
       />
 
-      <div className="nav-links-container">
-        <Link className="nav-link" to="/">
-          Home
-        </Link>
 
-        <Link className="nav-link" to="/buyernest">
+      <div className="nav-title">
+        ~STOCK OVERWATCH~
+      </div>
+      {isLoggedIn && (<>
+        <Link className="nav-link" to="/buyernest/insights">
           Buyer Nest
         </Link>
 
@@ -26,11 +33,17 @@ function Navbar({ stocks }) {
           News
         </Link>
 
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/account">
+          Account
+        </Link>
+
+        <Link className="nav-link" to="/support">
           Support
         </Link>
-      </div>
-      <div className="user-login">
+      </>)}
+
+
+      {isLoggedOut && (<>
         <Link className="nav-link" to="/login">
           Sign in
         </Link>
@@ -38,7 +51,14 @@ function Navbar({ stocks }) {
         <Link className="nav-link" to="/signup">
           Sign up
         </Link>
-      </div>
+      </>)}
+      {isLoggedIn && (<>
+        <form className="logout" onSubmit={logout} >
+          <button className="logout-btn" type="submit" to="/login">
+            Log out
+          </button>
+        </form></>)}
+
       <Outlet />
     </div>
   );

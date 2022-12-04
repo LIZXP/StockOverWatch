@@ -1,9 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router";
 import { valid } from "semver";
 import "./sidebar.styles.scss";
 import { Sidedata } from "./Sidedata.jsx";
+import useUserProfile from "../../../userProfile";
+
 function Sidebar({ stocks }) {
+  const { getUserProfile } = useUserProfile();
+  const [totalFunds, setTotalFunds] = useState(0);
+
+  useEffect(() => {
+    getUserProfile().then(profile => {
+      console.log(profile);
+      setTotalFunds(parseFloat(profile.funds));
+    }).catch(error => {
+      console.error(error);
+    });
+  }, []);
+
   return (
     <div className="buyernest-container">
       <div className="sidebar-container">
@@ -20,7 +34,8 @@ function Sidebar({ stocks }) {
                 key={i}
                 className="row"
                 id={window.location.pathname === valid.link ? "active" : ""}
-                onClick={() => {
+                onClick={(e) => {
+                  e.preventDefault();
                   window.location.pathname = data.link;
                 }}
               >
@@ -31,6 +46,7 @@ function Sidebar({ stocks }) {
           })}
         </ul>
         <div className="footer">Support</div>
+        <div className="user-balance">Current Balance:{totalFunds.toFixed(2)}</div>
         <div className="icon-footer">
           <div className="footer-logo">
             <img

@@ -11,23 +11,23 @@ export const Sidedata = [
     link: "/",
   },
   {
-    title: "Account",
-    icon: <AccountBalanceWalletTwoToneIcon />,
-    link: "/",
-  },
-  {
     title: "Stocks",
     icon: <ShowChartTwoToneIcon />,
-    link: "/",
+    link: "/buyernest/stocks",
+  },
+  {
+    title: "Account",
+    icon: <AccountBalanceWalletTwoToneIcon />,
+    link: "/account",
   },
   {
     title: "Insights",
     icon: <QueryStatsTwoToneIcon />,
-    link: "/",
+    link: "/buyernest/insights",
   },
   {
     title: "Profile",
     icon: <ManageAccountsTwoToneIcon />,
-    link: "/",
+    link: "/buyernest/profile",
   },
 ];
