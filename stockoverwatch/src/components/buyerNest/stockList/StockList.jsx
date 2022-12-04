@@ -99,7 +99,7 @@ function StockListItem(stock, i, auth, monthlyPrices) {
                 </li>
               )}
             </ul>
-            <div className="quantity-btn flex justify-center items-space-evenly gap-3">
+            <div className="quantity-btn flex justify-left items-space-evenly gap-3">
               <input
                 type="number"
                 className="text-black-500"
