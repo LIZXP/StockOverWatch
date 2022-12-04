@@ -10,7 +10,6 @@ import { Routes, Route } from "react-router-dom";
 import Signup from "./components/signup/SignUp";
 import Login from "./components/login/Login";
 import ForgotPassword from "./components/forgotPassword/ForgotPassword";
-import UpdateProfile from "./components/account/UpdateProfile";
 import Main from "./components/home/Home";
 import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
@@ -73,13 +72,12 @@ function App() {
       <AuthProvider>
         <Routes>
           <Route path="/" element={<Main stocks={stocks} />} />
-          {/* <Route path="/update-profile" element={<UpdateProfile />} /> */}
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/support" element={<Support />} />
           <Route path="/buyernest" element={<Sidebar />}>
-            <Route index element={<Insights />} />
+            <Route path="insights" element={<Insights />} />
             <Route
               path="stocks"
               element={
@@ -88,8 +86,9 @@ function App() {
             />
             <Route path="profile" element={<UserProfile />} />
           </Route>
-          <Route path="/learn" element={<Learn />} />
           <Route path="/account" element={<Account />}></Route>
+          <Route path="/learn" element={<Learn />} />
+          
         </Routes>
       </AuthProvider>
     </div>
