@@ -14,10 +14,12 @@ import Main from "./components/home/Home";
 import StockList from "./components/buyerNest/stockList/StockList";
 import Sidebar from "./components/buyerNest/sidebar/Sidebar";
 import Learn from "./components/learn/Learn";
+import NewsList from "./components/news/NewsList";
 import Account from "./components/account/Account";
 import Insights from "./components/buyerNest/insights/Insights";
 import Support from "./components/support/Support";
 import UserProfile from "./components/buyerNest/userProfile/UserProfile";
+
 
 /* eslint-disable */
 
@@ -88,7 +90,8 @@ function App() {
           </Route>
           <Route path="/account" element={<Account />}></Route>
           <Route path="/learn" element={<Learn />} />
-          
+          <Route path="/news" element={<NewsList />} />
+
         </Routes>
       </AuthProvider>
     </div>
