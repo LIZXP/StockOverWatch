@@ -18,11 +18,11 @@ function Navbar({ stocks }) {
           Buyer Nest
         </Link>
 
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/learn">
           Learn
         </Link>
 
-        <Link className="nav-link" to="/">
+        <Link className="nav-link" to="/news">
           News
         </Link>
 
