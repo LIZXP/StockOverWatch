@@ -50,6 +50,7 @@ function Insights() {
                         labels: {
                           color: "white",
                           font: { size: 30 },
+                          boxWidth: 0,
                         },
                       },
                     },

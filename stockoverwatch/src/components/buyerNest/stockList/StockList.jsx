@@ -174,6 +174,7 @@ function StockListItem(stock, i, auth, monthlyPrices) {
                 legend: {
                   labels: {
                     color: "white",
+                    boxWidth: 0,
                   },
                 },
               },
