@@ -170,9 +170,11 @@ function StockListItem(stock, i, auth, monthlyPrices) {
                   radius: 0,
                 },
               },
-              legend: {
-                labels: {
-                  fontColor: "white",
+              plugins: {
+                legend: {
+                  labels: {
+                    color: "white",
+                  },
                 },
               },
             }}
