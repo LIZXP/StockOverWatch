@@ -18,6 +18,8 @@ function Insights() {
                 {
                   label: data.name,
                   data: data.c,
+                  borderColor: "rgb(37, 171, 62)",
+                  fill: true,
                 },
               ],
             };
@@ -30,6 +32,11 @@ function Insights() {
                       x: {
                         ticks: {
                           display: false,
+                        },
+                      },
+                      y: {
+                        ticks: {
+                          color: "white",
                         },
                       },
                     },
@@ -53,6 +60,9 @@ function Insights() {
                 {
                   label: data.name,
                   data: data.c,
+                  borderColor: "rgb(37, 171, 62)",
+                  color: "rgb(245, 245, 245)",
+                  fill: true,
                 },
               ],
             };
@@ -67,10 +77,22 @@ function Insights() {
                           display: false,
                         },
                       },
+                      y: {
+                        ticks: {
+                          color: "white",
+                        },
+                      },
                     },
                     elements: {
                       point: {
                         radius: 0,
+                      },
+                    },
+                    plugins: {
+                      legend: {
+                        labels: {
+                          color: "white",
+                        },
                       },
                     },
                   }}

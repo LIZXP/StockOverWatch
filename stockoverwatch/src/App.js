@@ -20,7 +20,6 @@ import Insights from "./components/buyerNest/insights/Insights";
 import Support from "./components/support/Support";
 import UserProfile from "./components/buyerNest/userProfile/UserProfile";
 
-
 /* eslint-disable */
 
 function App() {
@@ -51,7 +50,12 @@ function App() {
     const prevTime = window.localStorage.getItem("time");
     const timeDiff = timeNow - prevTime;
     const stocksData = window.localStorage.getItem("stocks");
-    if (!stocksData || stocksData[0] === null || timeDiff > 61000) {
+    if (
+      !stocksData ||
+      stocksData[0] === null ||
+      stocksData[1] === null ||
+      timeDiff > 61000
+    ) {
       Promise.all(stocksPriceDataFinn()).then((res) => {
         window.localStorage.setItem("stocks", JSON.stringify(res));
         window.localStorage.setItem("time", Date.now());
@@ -88,10 +92,9 @@ function App() {
             />
             <Route path="profile" element={<UserProfile />} />
           </Route>
-          <Route path="/account" element={<Account />}></Route>
+          <Route path="/account" element={<Account stocks={stocks} />}></Route>
           <Route path="/learn" element={<Learn />} />
           <Route path="/news" element={<NewsList />} />
-
         </Routes>
       </AuthProvider>
     </div>

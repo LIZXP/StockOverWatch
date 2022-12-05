@@ -33,17 +33,19 @@ function StockListItem(stock, i, auth, monthlyPrices) {
   const [totalFunds, setTotalFunds] = useState(0);
 
   useEffect(() => {
-    getUserProfile().then(profile => {
-      console.log(profile);
-      setTotalFunds(parseFloat(profile.funds));
-    }).catch(error => {
-      console.error(error);
-    })
+    getUserProfile()
+      .then((profile) => {
+        console.log(profile);
+        setTotalFunds(parseFloat(profile.funds));
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   const updateFunds = async (funds) => {
     await updateUserProfile({
-      funds: parseFloat(funds)
+      funds: parseFloat(funds),
     });
     setTotalFunds(funds);
   };
@@ -72,8 +74,8 @@ function StockListItem(stock, i, auth, monthlyPrices) {
       console.error();
       return;
     }
-    if (totalFunds < (stock.c * quantity)) {
-      alert("Insufficient Funds.")
+    if (totalFunds < stock.c * quantity) {
+      alert("Insufficient Funds.");
       return;
     }
     const purchasedStock = {
@@ -83,10 +85,10 @@ function StockListItem(stock, i, auth, monthlyPrices) {
       quantity: quantity,
       dop: new Date(),
     };
-  
+
     try {
       await stockData.addStock(purchasedStock);
-      updateFunds(totalFunds - (stock.c * quantity));
+      updateFunds(totalFunds - stock.c * quantity);
       console.log(`you have purchased stock from ${stock.symbol}...`);
     } catch (err) {
       console.error(err);
@@ -166,6 +168,11 @@ function StockListItem(stock, i, auth, monthlyPrices) {
               elements: {
                 point: {
                   radius: 0,
+                },
+              },
+              legend: {
+                labels: {
+                  fontColor: "white",
                 },
               },
             }}

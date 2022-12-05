@@ -13,11 +13,10 @@
     padding-left: 24%;
     height: 10%;
     width: 100%;
-
+    color: whitesmoke;
     font-size: 2rem;
     font-weight: 600;
     background-color: black;
-    color: whitesmoke;
   }
   .top-bar {
     background-color: black;
@@ -32,6 +31,9 @@
         margin-bottom: 3rem;
         width: 31rem !important;
         height: 15rem !important;
+        background-color: rgb(47, 49, 49);
+        border-radius: 10px;
+        color: aliceblue;
       }
     }
     .two {
@@ -41,6 +43,8 @@
         margin-bottom: 3rem;
         width: 31rem !important;
         height: 15rem !important;
+        background-color: rgb(47, 49, 49);
+        border-radius: 10px;
       }
     }
   }
