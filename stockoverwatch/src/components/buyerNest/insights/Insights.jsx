@@ -45,6 +45,14 @@ function Insights() {
                         radius: 0,
                       },
                     },
+                    plugins: {
+                      legend: {
+                        labels: {
+                          color: "white",
+                          font: { size: 30 },
+                        },
+                      },
+                    },
                   }}
                   className="line-chart-one"
                 />
@@ -92,6 +100,8 @@ function Insights() {
                       legend: {
                         labels: {
                           color: "white",
+                          font: { size: 30 },
+                          boxWidth: 0,
                         },
                       },
                     },
