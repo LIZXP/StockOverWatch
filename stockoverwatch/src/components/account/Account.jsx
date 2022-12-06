@@ -14,24 +14,31 @@ export default function Account() {
   const [showPortfolio, setShowPortfolio] = useState(false);
 
   useEffect(() => {
-    getUserProfile().then(profile => {
-      setTotalFunds(parseFloat(profile.funds));
-    }).catch(error => {
-      console.error(error);
-    });
+    getUserProfile()
+      .then((profile) => {
+        setTotalFunds(parseFloat(profile.funds));
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   useEffect(() => {
-    stockData.getAllStocks().then(query => {
-      setStocks(query.docs.map(x => {
-        return {
-          id: x.id,
-          ...x.data()
-        }
-      }));
-    }).catch(error => {
-      console.error(error);
-    });
+    stockData
+      .getAllStocks()
+      .then((query) => {
+        setStocks(
+          query.docs.map((x) => {
+            return {
+              id: x.id,
+              ...x.data(),
+            };
+          })
+        );
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   useEffect(() => {
@@ -40,14 +47,13 @@ export default function Account() {
       setPrices(stockPrices);
     })();
   }, []);
-
   const onChangedRequestFunds = (event) => {
     setRequestedFunds(parseFloat(event.target.value));
   };
 
   const updateFunds = async (funds) => {
     await updateUserProfile({
-      funds: parseFloat(funds)
+      funds: parseFloat(funds),
     });
     setTotalFunds(funds);
     setRequestedFunds(0);
@@ -55,19 +61,19 @@ export default function Account() {
 
   const resetFunds = () => {
     updateFunds(0);
-  }
+  };
 
   const addFunds = (funds) => {
     updateFunds(parseFloat(totalFunds) + parseFloat(funds));
-  }
+  };
 
   const toggleShowFunds = () => {
     setShowFunds(!showFunds);
-  }
+  };
 
   const toggleShowPortfolio = () => {
     setShowPortfolio(!showPortfolio);
-  }
+  };
 
   return (
     <div className="account-page">
@@ -138,9 +144,9 @@ export default function Account() {
                 </div>
               </div>
             );
-          })}
+          })};
         </div>
       </div>
     </div>
-  );
-}
+  )
+};

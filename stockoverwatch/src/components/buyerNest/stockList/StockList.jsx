@@ -41,7 +41,7 @@ function StockListItem(stock, i, auth, monthlyPrices) {
 
   const updateFunds = async (funds) => {
     await updateUserProfile({
-      funds: parseFloat(funds)
+      funds: parseFloat(funds),
     });
     setTotalFunds(funds);
   };
@@ -69,8 +69,8 @@ function StockListItem(stock, i, auth, monthlyPrices) {
       console.error("Stock Unavailable");
       return;
     }
-    if (totalFunds < (stock.c * quantity)) {
-      alert("Insufficient Funds.")
+    if (totalFunds < stock.c * quantity) {
+      alert("Insufficient Funds.");
       return;
     }
     const purchasedStock = {
@@ -163,6 +163,14 @@ function StockListItem(stock, i, auth, monthlyPrices) {
               elements: {
                 point: {
                   radius: 0,
+                },
+              },
+              plugins: {
+                legend: {
+                  labels: {
+                    color: "white",
+                    boxWidth: 0,
+                  },
                 },
               },
             }}
