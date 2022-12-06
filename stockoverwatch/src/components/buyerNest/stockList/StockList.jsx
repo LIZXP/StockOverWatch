@@ -9,11 +9,6 @@ import useUserProfile from "../../../userProfile";
 
 function StockList({ stocks, monthlyPrices }) {
   const auth = useAuth();
-
-  if (stocks.length === 0 || monthlyPrices.length === 0) {
-    return null;
-  }
-
   return (
     <div className="StockList">
       {stocks.map((stock, i) => {
@@ -34,12 +29,15 @@ function StockListItem(stock, i, auth, monthlyPrices) {
 
   useEffect(() => {
     getUserProfile().then(profile => {
-      console.log(profile);
       setTotalFunds(parseFloat(profile.funds));
     }).catch(error => {
       console.error(error);
     })
   }, []);
+
+  if (!monthlyPrices[i]) {
+    return null;
+  }
 
   const updateFunds = async (funds) => {
     await updateUserProfile({
@@ -66,10 +64,9 @@ function StockListItem(stock, i, auth, monthlyPrices) {
   };
 
   const buyStock = async (e, stock, uid, quantity) => {
-    console.log("buy stock excuted", stock);
     e.preventDefault();
     if (!stock) {
-      console.error();
+      console.error("Stock Unavailable");
       return;
     }
     if (totalFunds < (stock.c * quantity)) {
@@ -83,11 +80,11 @@ function StockListItem(stock, i, auth, monthlyPrices) {
       quantity: quantity,
       dop: new Date(),
     };
-  
+
     try {
       await stockData.addStock(purchasedStock);
       updateFunds(totalFunds - (stock.c * quantity));
-      console.log(`you have purchased stock from ${stock.symbol}...`);
+      alert(`you have purchased stock from ${stock.symbol}...`);
     } catch (err) {
       console.error(err);
     }

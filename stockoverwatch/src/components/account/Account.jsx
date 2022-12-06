@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import useUserProfile from "../../userProfile";
 import stockData from "../../stockData";
 import "./account.styles.scss"
-import "../../helper/helperFunctions";
-import { stocksPriceDataFinn } from "../../helper/helperFunctions";
+import { getPrices } from "../../helper/prices";
 
 export default function Account() {
   const { updateUserProfile, getUserProfile } = useUserProfile();
@@ -37,12 +36,8 @@ export default function Account() {
 
   useEffect(() => {
     (async () => {
-      const promises = stocksPriceDataFinn();
-      const temp = [];
-      for (const p of promises) {
-        temp.push(await p);
-      }
-      setPrices(temp);
+      const [stockPrices, monthlyPrices] = await getPrices();
+      setPrices(stockPrices);
     })();
   }, []);
 
@@ -93,9 +88,9 @@ export default function Account() {
           </a>
         </div>
         <div className="account-cell">
-          <button className="btn" onClick={toggleShowFunds}>Manage Funds: </button>
+          <button className="btn" onClick={toggleShowFunds}>Manage Funds: $</button>
           {showFunds && <>
-            <p className="available-funds"> Total Funds: {totalFunds.toFixed(2)} </p>
+            <p className="available-funds"> Total Funds: ${totalFunds.toFixed(2)} </p>
             <input
               type="number"
               placeholder={"Request funds..."}
@@ -131,7 +126,7 @@ export default function Account() {
             return (
               <div key={i}>
                 <div>
-                  <p>Stock:{stock.stock} Quantity:{stock.quantity} Total Value:{(currentValue * stock.quantity).toFixed(2)} Prev Value:{prevValue} Current Value:{currentValue} Difference:{(currentValue - prevValue).toFixed(2)}</p>
+                  <p>Stock:{stock.stock} Quantity:{stock.quantity} Total Value:${(currentValue * stock.quantity).toFixed(2)} Prev Value:${prevValue} Current Value:${currentValue} Difference:${(currentValue - prevValue).toFixed(2)}</p>
                 </div>
                 <div>
                   <button className="btn-2" onClick={() => {

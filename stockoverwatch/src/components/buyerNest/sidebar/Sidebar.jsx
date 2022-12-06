@@ -11,7 +11,6 @@ function Sidebar({ stocks }) {
 
   useEffect(() => {
     getUserProfile().then(profile => {
-      console.log(profile);
       setTotalFunds(parseFloat(profile.funds));
     }).catch(error => {
       console.error(error);
