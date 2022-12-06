@@ -24,13 +24,13 @@ function Support() {
                 <span>
                   <EmailIcon />
                 </span>
-                <span>Chris.Bowyer@gmail.com</span>
+                <span>christianbowyer1996@gmail.com</span>
               </li>
               <li>
                 <span>
                   <EmailIcon />
                 </span>
-                <span>Bryan.Nuguyen@gmail.com</span>
+                <span>bryan225577@gmail.com</span>
               </li>
             </ul>
             <ul className="sci">
