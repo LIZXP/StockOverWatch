@@ -102,6 +102,7 @@ export const monthStockPriceFinn = () => {
         console.error("FinnError", error.message);
       });
   };
+  // fetch the data from finnhub and add the img and stock name to the object
   stocksSymbols.map((ssymb) => {
     allPromiseCandle.push(
       getStockPriceData(ssymb.name)
