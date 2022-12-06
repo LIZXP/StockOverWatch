@@ -10,11 +10,13 @@ function Sidebar({ stocks }) {
   const [totalFunds, setTotalFunds] = useState(0);
 
   useEffect(() => {
-    getUserProfile().then(profile => {
-      setTotalFunds(parseFloat(profile.funds));
-    }).catch(error => {
-      console.error(error);
-    });
+    getUserProfile()
+      .then((profile) => {
+        setTotalFunds(parseFloat(profile.funds));
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }, []);
 
   return (
@@ -45,7 +47,9 @@ function Sidebar({ stocks }) {
           })}
         </ul>
         <div className="footer">Support</div>
-        <div className="user-balance">Current Balance:{totalFunds.toFixed(2)}</div>
+        <div className="user-balance">
+          Current Balance:{totalFunds.toFixed(2)}
+        </div>
         <div className="icon-footer">
           <div className="footer-logo">
             <img
@@ -54,8 +58,8 @@ function Sidebar({ stocks }) {
             />
           </div>
           <div className="app-blah">
-            <h5 className="get-app">Get the app</h5>
-            <h5>iPhone &#8226; Android</h5>
+            <span className="get-app">Get the app</span>
+            <span>iPhone &#8226; Android</span>
           </div>
         </div>
       </div>
