@@ -47,7 +47,7 @@ function Sidebar({ stocks }) {
           })}
         </ul>
         <div className="footer">
-          <a>Support</a>
+          <a href="/support">Support</a>
         </div>
         <div className="user-balance">
           Current Balance:{totalFunds.toFixed(2)}
