@@ -25,6 +25,8 @@ Insights is a (peter inserts explanation for the insights)
 
 This is a profile page where a user can express their personal information and social links. This will be important in the future when we implement the leaderboard and chat systems. 
 
+If you want to know more about the journey we took checkout the support page.
+
 
 ------------- Bryan
 
