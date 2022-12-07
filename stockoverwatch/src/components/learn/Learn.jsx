@@ -6,8 +6,6 @@ import investor2 from "../../assets/mark-cuban.jpeg";
 import investor3 from "../../assets/barbara-corcoran.jpeg";
 import SupportEngine from "../SupportEngine";
 
-// import Typewriter from "typewriter-effect";
-
 const cards = [
   {
     id: "1",

@@ -5,7 +5,7 @@ export const styles = {
     // Border
     borderRadius: "50%",
     // Background
-    // backgroundImage: `../../assets/logo.png`,
+    // backgroundImage: `url(https://www.newarab.com/sites/default/files/styles/large_16_9/public/2022-10/Andrew_Tate_on_%27Anything_Goes_With_James_English%27_in_2021.jpg?h=25926a0d&itok=etBlghfn)`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "84px",
@@ -101,7 +101,8 @@ export const styles = {
     fontWeight: "600",
   },
   chatEngineWindow: {
-    width: "100%",
+    width: "100wh",
+    height: "100vh",
     backgroundColor: "#fff",
   },
 };

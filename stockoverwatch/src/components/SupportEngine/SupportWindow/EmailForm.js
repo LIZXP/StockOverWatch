@@ -7,6 +7,7 @@ import axios from "axios";
 import { LoadingOutlined } from "@ant-design/icons";
 
 import Avatar from "../Avatar";
+import "../index.scss";
 
 const EmailForm = (props) => {
   const [email, setEmail] = useState("");

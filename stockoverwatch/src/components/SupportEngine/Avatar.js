@@ -2,6 +2,8 @@ import React, { useState } from "react";
 
 import { styles } from "./styles";
 
+import "./index.scss";
+
 const Avatar = (props) => {
   const [hovered, setHovered] = useState(false);
 

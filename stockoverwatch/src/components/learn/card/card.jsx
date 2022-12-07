@@ -1,5 +1,5 @@
 import "./card.scss";
-// import Typewriter from "typewriter-effect";
+import Typewriter from "typewriter-effect";
 
 export default function Card({ card }) {
   return (
@@ -12,18 +12,15 @@ export default function Card({ card }) {
         </div>
       </div>
       <div className="card-back">
-        <a href={card.link}>
-          {" "}
-          Learn More
-          {/* <Typewriter
-          options={{
-            strings:["Learn more"
-          ],
-          autoStart: true,
-          loop: true,
-        }}
-        
-        /> */}
+        <a className="learn" href={card.link}>
+          {/* Learn More */}
+          <Typewriter
+            options={{
+              strings: ["Learn more"],
+              autoStart: true,
+              loop: true,
+            }}
+          />
         </a>
       </div>
     </div>
