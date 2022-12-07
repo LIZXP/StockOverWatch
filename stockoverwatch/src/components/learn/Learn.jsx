@@ -4,7 +4,8 @@ import Card from "./card/card";
 import investor1 from "../../assets/warren-buffett.jpg";
 import investor2 from "../../assets/mark-cuban.jpeg";
 import investor3 from "../../assets/barbara-corcoran.jpeg";
-import chatbox from "./chatbox/chatbox";
+import SupportEngine from "../SupportEngine";
+
 // import Typewriter from "typewriter-effect";
 
 const cards = [
@@ -47,7 +48,7 @@ export default function Learn() {
           ))}
         </div>
       </div>
-      <chatbox />
+      <SupportEngine />
     </>
   );
 }

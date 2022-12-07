@@ -1,5 +1,5 @@
 import "./card.scss";
-import Typewriter from "typewriter-effect";
+// import Typewriter from "typewriter-effect";
 
 export default function Card({ card }) {
   return (
