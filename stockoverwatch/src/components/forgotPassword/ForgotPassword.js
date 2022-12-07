@@ -33,7 +33,7 @@ export default function ForgotPassword() {
   return (
     <>
       <div className="forgot-pwd-container flex justify-center items-center content-center h-max">
-        <div className="w-1/2 mt-5  px-9 py-3 bg-white shadow-md items-center">
+        <div className=" mt-5  px-9 py-3 bg-white shadow-md items-center">
           {error && <p className="bg-red-200 text-red-500 py-3 text-center font-bold">{error}</p>}
           {message && <p className="bg-red-200 text-red-500 py-3 text-center font-bold">{message}</p>}
           <form className="rounded " onSubmit={handleSubmit}>

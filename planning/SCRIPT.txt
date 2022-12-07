@@ -1,0 +1,45 @@
+//-------- Intro
+Hello Everyone,
+My name is chris im joined by peter and bryan and today, we are vary excited to demonstrate the latest in stock trading technology. Welcome to Stock OverWatch, A simple easy to use app where users can manage a simple investment portfolio without the fear of risking real currency. 
+
+
+
+When you run this app for the first time you will begin at this lovely home page. At the top of youre screen you will be viewing the top 6 stocks according to their current performance. Stockoverwatch uses multiple api's that allow us to access live stock data and is being constantly updated every 60 seconds. In order to continue as a new user you will first need to create an account as you can see here.... after you have created an account its time to get started. ----- Log in
+
+
+After logging in the user will now be able to navigate through the site. The first place you want to visit is going to be the account terminal. This is the hub for managing your funds & your portfolio. when you create a new account your iniitial balance is 0$ and your portfolio will be empty. open your funds tab and simply input your desired funds in dollars and cents thenn add funds. its also worth mentioning that you can reset your funds to 0 in case you wanted to have a fresh start. once you add funds your ready to go look at some stocks.
+
+
+------------- Peter
+
+This app uses a buyer nest component which consists of multiple pages, Lets see how it works....
+
+initially you will come to the purchase page, here you have a list of different stocks including their values and a chart representing  the stock value trends.
+the buying process is simple, pick a stock, enter a quantity , then click buy. you will be shown an alert message to inform the user if the purchase was successful or not.
+you will also notice, buyer nest has a sidebar for easy navigation. in the bottom of the side bar your current balance is displayed to the user. notice this will only rerender when you refresh the page. This is an example of one thing we would like to improve in the future. last thing to notice here you must have enough funds for the purchaser or it will e rejected.
+
+moving on,
+
+Insights is a (peter inserts explanation for the insights)
+
+
+This is a profile page where a user can express their personal information and social links. This will be important in the future when we implement the leaderboard and chat systems. 
+
+
+------------- Bryan
+
+lastly,
+
+we can go back to the account terminal when we are done buying stocks and look at the user portfolio, here you can view your stocks and their progress. If you want to sell a stock click the sell button. notice how the total funds change, thats the fun part, overtime you can build your funds simply by investing in stocks. if you sell at profit your funds increase and the opposite at a loss.
+
+Stockoverwatch  was created to be an educational app so lets look at those features...
+
+We are not experts in stocks but we provide the user with a list of resources and articles. from stock market experts. simply click on the link that interests you to navigate to these sources so you can make informed decisions with all your transactions. 
+
+The last page we want to show you is the learn page. these are powerful quotes from investing legends, Everytime you log in a random selection of quotes from different investors will be here for a little inspiration.
+
+-----------(home page --> logout)
+
+This concludes our presentation
+
+Thanks Everyone .

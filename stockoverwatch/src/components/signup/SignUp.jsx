@@ -34,7 +34,7 @@ export default function Signup() {
   return (
     <>
       <div className="signup-container flex justify-center items-center content-center h-max">
-        <div className="w-1/2 mt-5 px-6 py-5 bg-white shadow-md">
+        <div className=" mt-5 px-6 py-5 bg-white shadow-md">
           {error && <p className="bg-red-200 text-red-500 py-3 text-center font-bold">{error}</p>}
           <form className="rounded " onSubmit={handleSubmit}>
             <h2 className="signup-header text-center py-6">Create Account: </h2>
