@@ -59,7 +59,7 @@ function Support() {
           <h1>About The Project</h1>
           <div className="text">
             <p>
-              It all started with a dream.These are Creators behind Stockoverwatch. Three brave software developers spent 3 weeks designing and building this  user friendly stock tool. The biggest challenge that we faced was using the free version of finnhub API which limited the number of calls that our app could perform per minute causing massive bugs and these devs to lose many nights of sleep over. Here is their contact info.... please don't contact us. We hope you enjoy StockOverwatch!
+              It all started with a dream, these are the Creators of StockOverwatch. Three brave software developers spent 3 weeks designing and building this  user friendly stock tool. The biggest challenge that we faced was using the free version of finnhub API which limited the number of calls that our app could perform per minute causing massive bugs and these devs to lose many nights of sleep over. Here is their contact info.... please don't contact us. We hope you enjoy StockOverwatch!
             </p>
             <div className="dev-pics">
               <img src={peter} alt="peter" />

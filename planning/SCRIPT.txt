@@ -1,47 +1,97 @@
 //-------- Intro
 Hello Everyone,
-My name is chris im joined by peter and bryan and today, we are vary excited to demonstrate the latest in stock trading technology. Welcome to Stock OverWatch, A simple easy to use app where users can manage a simple investment portfolio without the fear of risking real currency. 
+
+this is team Stock Over Watch my name is Chris im joined by Peter and Bryan,  we are very excited to demonstrate the latest in 
+
+stock trading technology. Welcome to Stock Over Watch, A simple easy to use app where users can manage a simple investment 
+
+portfolio without the fear of risking real currency. this app uses react, sass and tailwind for the fontend. And uses google 
+
+firebase to handle our backend.
+
+When you open this app for the first time you will begin at the home page. for the demonstration proposes we have a premade 
+
+account,
+
+ after loggin in. you can see at the top of youre screen the top 6 stocks according to their current performance. are displayed
+
+ Stockoverwatch uses multiple api's that allow us to access live stock data to constantly updated the app. due to the api call
+ 
+  limit we are relegated to rerendering once per minute.
 
 
+After logging in the user will now be able to navigate through the site. The first place you want to visit is going to be the account terminal. This is the hub for managing 
 
-When you run this app for the first time you will begin at this lovely home page. At the top of youre screen you will be viewing the top 6 stocks according to their current performance. Stockoverwatch uses multiple api's that allow us to access live stock data and is being constantly updated every 60 seconds. In order to continue as a new user you will first need to create an account as you can see here.... after you have created an account its time to get started. ----- Log in
+your funds & your portfolio. when you create a new account your iniitial balance is $0 and your portfolio will be empty. Peter will demonstrate the funds management and stock 
 
-
-After logging in the user will now be able to navigate through the site. The first place you want to visit is going to be the account terminal. This is the hub for managing your funds & your portfolio. when you create a new account your iniitial balance is 0$ and your portfolio will be empty. open your funds tab and simply input your desired funds in dollars and cents thenn add funds. its also worth mentioning that you can reset your funds to 0 in case you wanted to have a fresh start. once you add funds your ready to go look at some stocks.
+purchases for you next.
 
 
 ------------- Peter
 
-This app uses a buyer nest component which consists of multiple pages, Lets see how it works....
+StocOverwatch uses a buyer nest component which consists of multiple pages, Lets see how it works....
 
-initially you will come to the purchase page, here you have a list of different stocks including their values and a chart representing  the stock value trends.
-the buying process is simple, pick a stock, enter a quantity , then click buy. you will be shown an alert message to inform the user if the purchase was successful or not.
-you will also notice, buyer nest has a sidebar for easy navigation. in the bottom of the side bar your current balance is displayed to the user. notice this will only rerender when you refresh the page. This is an example of one thing we would like to improve in the future. last thing to notice here you must have enough funds for the purchaser or it will e rejected.
+initially you will come to the Insights page where users can view market trends of fortune 500 companies. This will help the user make informed decisions of which stock they 
+
+like to invest in.
+
 
 moving on,
 
-Insights is a (peter inserts explanation for the insights)
 
+Head over to the purchase page, here you have a list of different stocks including their current values price change and a chart containing  A half year of the price history 
 
-This is a profile page where a user can express their personal information and social links. This will be important in the future when we implement the leaderboard and chat systems. 
+representing the stock value trends.
 
-If you want to know more about the journey we took checkout the support page.
+the buying process is simple, pick a stock, enter a quantity , then click buy. you will be shown an alert message to inform the user if the purchase was successful or not.
 
+you will also notice, buyer nest has a sidebar for easy navigation. in the bottom of the side bar your current balance is displayed to the user. last thing to notice here you
+
+ must have enough funds for the purchase or it will be rejected.
+
+This is a profile page where a user can edit and update their personal information and social links.
+
+here a user can insert more personal information. this will become more relevant when our leaderboards feature is implemented and for user-user communications.
+
+next Bryan will demonstrate portfolios and other educational tools.
 
 ------------- Bryan
 
-lastly,
+thank you Peter,
 
-we can go back to the account terminal when we are done buying stocks and look at the user portfolio, here you can view your stocks and their progress. If you want to sell a stock click the sell button. notice how the total funds change, thats the fun part, overtime you can build your funds simply by investing in stocks. if you sell at profit your funds increase and the opposite at a loss.
+Now that we have purchase some stocks lets view them,
+
+  go back to the account terminal and look at the user portfolio, here you can view your stocks and their progress. If you want to sell a 
+
+stock click the sell button. notice how the total funds change when we sell our stock?
+
+ overtime you can build your funds simply by investing in stocks. if you sell at profit your funds increase and the opposite if stock is at a loss.
+
+
 
 Stockoverwatch  was created to be an educational app so lets look at those features...
 
-We are not experts in stocks but we provide the user with a list of resources and articles. from stock market experts. simply click on the link that interests you to navigate to these sources so you can make informed decisions with all your transactions. 
+We are not experts in stocks but we provide the user with a list of resources and articles from stock market experts in the news page. simply click on the link that interests 
 
-The last page we want to show you is the learn page. these are powerful quotes from investing legends, Everytime you log in a random selection of quotes from different investors will be here for a little inspiration.
+you to navigate to these sources so you can make informed decisions with all your transactions. 
 
------------(home page --> logout)
 
-This concludes our presentation
 
-Thanks Everyone .
+The last page we want to show you is the learn page. these are powerful quotes from investing legends, Everytime you log in a random selection of quotes from different 
+
+investors will be here for a little inspiration. Also if a user is ever having issues with the app or their account, or simply need advice they can use our contact support 
+
+feature here which will immediately put you in contact with the business team.
+
+
+ -- Chris
+
+ Last but not least we have the support page which has the email links to contact the devs, and to learn more about or journey.
+
+ We would like to conclude our presentation by discussing the updates coming in patch 2.0....
+
+ we would like to implement a leaderboard and live community chat, so users can track and communcate their progress. 
+
+ finally we would like the user to be able to view a history of all of their transactions for better continuity as opposed to one-off style of investing. 
+
+ We want to thank you all for your time, StockOverwatch signing out...
