@@ -15,6 +15,7 @@ import Account from "./components/account/Account";
 import Insights from "./components/buyerNest/insights/Insights";
 import Support from "./components/support/Support";
 import UserProfile from "./components/buyerNest/userProfile/UserProfile";
+
 import { getPrices } from "./helper/prices";
 
 /* eslint-disable */
@@ -73,6 +74,7 @@ function App() {
           <Route path="/account" element={<Account stocks={stocks} />}></Route>
           <Route path="/learn" element={<Learn />} />
           <Route path="/news" element={<NewsList />} />
+          <Route path="/supportadmin" element={<SupportAdmin />} />
         </Routes>
       </AuthProvider>
     </div>
