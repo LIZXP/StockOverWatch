@@ -9,7 +9,7 @@ const SupportAdmin = () => {
       <ChatEngine
         projectID={`
           bf4316d6-924d-4a0c-80d8-f394e5f86ae7`}
-        userName="StockOverWatch"
+        userName="The Business Team"
         userSecret="123"
         // height="calc(100vh - 12px)"
       />

@@ -28,7 +28,7 @@ const EmailForm = (props) => {
     axios
       .put(
         "https://api.chatengine.io/chats/",
-        { usernames: ["StockOverWatch", email], is_direct_chat: true },
+        { usernames: ["The Business Team", email], is_direct_chat: true },
         {
           headers: {
             "Project-ID": "bf4316d6-924d-4a0c-80d8-f394e5f86ae7",
