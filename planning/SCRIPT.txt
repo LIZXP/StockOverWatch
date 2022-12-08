@@ -20,28 +20,39 @@ account,
   limit we are relegated to rerendering once per minute.
 
 
-After logging in the user will now be able to navigate through the site. The first place you want to visit is going to be the account terminal. This is the hub for managing 
+After logging in the user will now be able to navigate through the site. The first place you want to visit is going to be the 
 
-your funds & your portfolio. when you create a new account your iniitial balance is $0 and your portfolio will be empty. Peter will demonstrate the funds management and stock 
+account terminal. This is the hub for managing your funds & your portfolio. when you create a new account your iniitial balance
 
-purchases for you next.
+is $5000 and your portfolio will be empty.
+
+a user can add funds or reset funds with the click of a button, as seen here. as you can see this account currently owns 2 
+
+stocks.
+ 
+next, Peter will demonstrate the buy nest.
+
+
+
 
 
 ------------- Peter
 
-StocOverwatch uses a buyer nest component which consists of multiple pages, Lets see how it works....
 
-initially you will come to the Insights page where users can view market trends of fortune 500 companies. This will help the user make informed decisions of which stock they 
 
-like to invest in.
+ buyer nest contains  multiple pages, Lets see how it works....
+
+initially you will come to the Insights page where users can view market trends of fortune 500 companies. This will help the 
+
+user make informed decisions of which stock they like to invest in.
 
 
 moving on,
 
 
-Head over to the purchase page, here you have a list of different stocks including their current values price change and a chart containing  A half year of the price history 
+Head over to the purchase page, here you have a list of different stocks including their current values price change and a 
 
-representing the stock value trends.
+chart containing A half year of the price history representing the stock value trends.
 
 the buying process is simple, pick a stock, enter a quantity , then click buy. you will be shown an alert message to inform the user if the purchase was successful or not.
 
@@ -55,15 +66,15 @@ here a user can insert more personal information. this will become more relevant
 
 next Bryan will demonstrate portfolios and other educational tools.
 
+
+
 ------------- Bryan
 
 thank you Peter,
 
 Now that we have purchase some stocks lets view them,
 
-  go back to the account terminal and look at the user portfolio, here you can view your stocks and their progress. If you want to sell a 
-
-stock click the sell button. notice how the total funds change when we sell our stock?
+  go back to the account terminal and look at the user portfolio, here you can view your stocks and their progress. If you want to sell a stock click the sell button. notice how the total funds change when we sell our stock?
 
  overtime you can build your funds simply by investing in stocks. if you sell at profit your funds increase and the opposite if stock is at a loss.
 
@@ -76,15 +87,17 @@ We are not experts in stocks but we provide the user with a list of resources an
 you to navigate to these sources so you can make informed decisions with all your transactions. 
 
 
-
 The last page we want to show you is the learn page. these are powerful quotes from investing legends, Everytime you log in a random selection of quotes from different 
 
-investors will be here for a little inspiration. Also if a user is ever having issues with the app or their account, or simply need advice they can use our contact support 
+investors will be here for a little inspiration. Also if a user is ever having issues with the app or their account, or simply 
 
-feature here which will immediately put you in contact with the business team.
+need advice they can use our contact support feature here which will immediately put you in contact with the business team.
 
 
- -- Chris
+
+
+
+-- Chris 
 
  Last but not least we have the support page which has the email links to contact the devs, and to learn more about or journey.
 
