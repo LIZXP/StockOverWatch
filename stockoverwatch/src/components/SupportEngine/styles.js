@@ -5,7 +5,7 @@ export const styles = {
     // Border
     borderRadius: "50%",
     // Background
-    backgroundImage: `url(https://i.pinimg.com/736x/60/88/0e/60880ef799bb1edd172d645c39906c29.jpg)`,
+    backgroundImage: `url(https://mpng.subpng.com/20180604/txu/kisspng-computer-icons-question-mark-ask-question-5b1522320dc6b6.1860872115281116660564.jpg)`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "84px",

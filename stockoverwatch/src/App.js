@@ -49,7 +49,6 @@ function App() {
       setStocks(stockPrices);
       setmonthlyPrice(monthlyPrices);
     })();
-
   }, []);
 
   return (
@@ -74,7 +73,7 @@ function App() {
           <Route path="/account" element={<Account stocks={stocks} />}></Route>
           <Route path="/learn" element={<Learn />} />
           <Route path="/news" element={<NewsList />} />
-          <Route path="/supportadmin" element={<SupportAdmin />} />
+          {/* <Route path="/supportadmin" element={<SupportAdmin />} /> */}
         </Routes>
       </AuthProvider>
     </div>
