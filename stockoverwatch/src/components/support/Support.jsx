@@ -24,13 +24,13 @@ function Support() {
                 <span>
                   <EmailIcon />
                 </span>
-                <span>Chris.Bowyer@gmail.com</span>
+                <span>christianbowyer1996@gmail.com</span>
               </li>
               <li>
                 <span>
                   <EmailIcon />
                 </span>
-                <span>Bryan.Nuguyen@gmail.com</span>
+                <span>bryan225577@gmail.com</span>
               </li>
             </ul>
             <ul className="sci">
@@ -56,17 +56,10 @@ function Support() {
           </div>
         </div>
         <div className="about-us">
-          <h1>About This Project</h1>
+          <h1>About The Project</h1>
           <div className="text">
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima
-              voluptate dignissimos excepturi repellendus facere, rem suscipit
-              molestiae, ratione consequatur omnis nobis eaque, hic
-              necessitatibus commodi. Alias sequi nostrum nesciunt in! Ad fugiat
-              eum nobis placeat voluptas at officiis cupiditate aliquam incidunt
-              natus? Recusandae, delectus animi laudantium iste deserunt,
-              obcaecati, sit mollitia aliquam sunt distinctio enim a vitae minus
-              dolorem. Consequuntur!
+              It all started with a dream.These are Creators behind Stockoverwatch. Three brave software developers spent 3 weeks designing and building this  user friendly stock tool. The biggest challenge that we faced was using the free version of finnhub API which limited the number of calls that our app could perform per minute causing massive bugs and these devs to lose many nights of sleep over. Here is their contact info.... please don't contact us. We hope you enjoy StockOverwatch!
             </p>
             <div className="dev-pics">
               <img src={peter} alt="peter" />

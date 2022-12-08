@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { db } from "./firebase-config";
 import { collection, getDocs } from "firebase/firestore";
-import {
-  stocksPriceDataFinn,
-  monthStockPriceFinn,
-} from "./helper/helperFunctions.js";
 import { AuthProvider } from "./contexts/AuthContext";
 import { Routes, Route } from "react-router-dom";
 import Signup from "./components/signup/SignUp";
@@ -19,7 +15,9 @@ import Account from "./components/account/Account";
 import Insights from "./components/buyerNest/insights/Insights";
 import Support from "./components/support/Support";
 import UserProfile from "./components/buyerNest/userProfile/UserProfile";
-import SupportAdmin from "./components/SupportAdmin";
+
+import { getPrices } from "./helper/prices";
+
 /* eslint-disable */
 
 function App() {
@@ -46,31 +44,12 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const timeNow = Date.now();
-    const prevTime = window.localStorage.getItem("time");
-    const timeDiff = timeNow - prevTime;
-    const stocksData = window.localStorage.getItem("stocks");
-    if (
-      !stocksData ||
-      stocksData[0] === null ||
-      stocksData[1] === null ||
-      timeDiff > 61000
-    ) {
-      Promise.all(stocksPriceDataFinn()).then((res) => {
-        window.localStorage.setItem("stocks", JSON.stringify(res));
-        window.localStorage.setItem("time", Date.now());
-      });
-      Promise.all(monthStockPriceFinn()).then((res) => {
-        window.localStorage.setItem("monthlyPrice", JSON.stringify(res));
-      });
-    }
-  }, []);
+    (async () => {
+      const [stockPrices, monthlyPrices] = await getPrices();
+      setStocks(stockPrices);
+      setmonthlyPrice(monthlyPrices);
+    })();
 
-  useEffect(() => {
-    const stocksData = window.localStorage.getItem("stocks");
-    const monthlyPriceData = window.localStorage.getItem("monthlyPrice");
-    setStocks(JSON.parse(stocksData));
-    setmonthlyPrice(JSON.parse(monthlyPriceData));
   }, []);
 
   return (

@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
 import useUserProfile from "../../userProfile";
 import stockData from "../../stockData";
-import "./account.styles.scss";
-import "../../helper/helperFunctions";
-import { stocksPriceDataFinn } from "../../helper/helperFunctions";
+import "./account.styles.scss"
+import { getPrices } from "../../helper/prices";
 
 export default function Account() {
   const { updateUserProfile, getUserProfile } = useUserProfile();
@@ -44,12 +43,8 @@ export default function Account() {
 
   useEffect(() => {
     (async () => {
-      const promises = stocksPriceDataFinn();
-      const temp = [];
-      for (const p of promises) {
-        temp.push(p);
-      }
-      setPrices(temp);
+      const [stockPrices, monthlyPrices] = await getPrices();
+      setPrices(stockPrices);
     })();
   }, []);
   const onChangedRequestFunds = (event) => {
@@ -99,79 +94,59 @@ export default function Account() {
           </a>
         </div>
         <div className="account-cell">
-          <button className="btn" onClick={toggleShowFunds}>
-            Manage Funds:{" "}
-          </button>
-          {showFunds && (
-            <>
-              <p className="available-funds">
-                {" "}
-                Total Funds: {totalFunds.toFixed(2)}{" "}
-              </p>
-              <input
-                type="number"
-                placeholder={"Request funds..."}
-                className="user-input"
-                name="balance"
-                value={requestedFunds}
-                onChange={onChangedRequestFunds}
-              />
-              <button className="btn-2" onClick={resetFunds}>
-                Reset Funds
-              </button>
-              <button
-                className="btn-2"
-                onClick={() => {
-                  addFunds(requestedFunds);
-                }}
-              >
-                Add Funds
-              </button>
-            </>
-          )}
+          <button className="btn" onClick={toggleShowFunds}>Manage Funds: $</button>
+          {showFunds && <>
+            <p className="available-funds"> Total Funds: ${totalFunds.toFixed(2)} </p>
+            <input
+              type="number"
+              placeholder={"Request funds..."}
+              className="user-input"
+              name="balance"
+              value={requestedFunds}
+              onChange={onChangedRequestFunds}
+            />
+            <button
+              className="btn-2"
+              onClick={resetFunds}
+            >Reset Funds
+            </button>
+            <button
+              className="btn-2"
+              onClick={() => {
+                addFunds(requestedFunds);
+              }}
+            >Add Funds
+            </button>
+          </>
+          }
         </div>
         <div className="account-cell">
-          <button className="btn" onClick={toggleShowPortfolio}>
-            Portfolio:
-          </button>
-          {showPortfolio &&
-            stocks.map((stock, i) => {
-              const matchingPrices = prices.filter(
-                (p) => p.symbol === stock.stock
-              );
-              let currentValue = 0;
-              if (matchingPrices.length !== 0) {
-                currentValue = matchingPrices[0].c;
-              }
-              const prevValue = stock.price;
-              return (
-                <div key={i}>
-                  <div>
-                    <p>
-                      Stock:{stock.stock} Quantity:{stock.quantity} Total Value:
-                      {(currentValue * stock.quantity).toFixed(2)} Prev Value:
-                      {prevValue} Current Value:{currentValue} Difference:
-                      {(currentValue - prevValue).toFixed(2)}
-                    </p>
-                  </div>
-                  <div>
-                    <button
-                      className="btn-2"
-                      onClick={() => {
-                        addFunds(currentValue * stock.quantity);
-                        stockData.deleteStock(stock.id);
-                        const newStocks = stocks.filter((x) => x !== stock);
-                        setStocks(newStocks);
-                      }}
-                    >
-                      SELL
-                    </button>
-                  </div>
+          <button className="btn" onClick={toggleShowPortfolio}>Portfolio:</button>
+          {showPortfolio && stocks.map((stock, i) => {
+            const matchingPrices = prices.filter(p => p.symbol === stock.stock);
+            let currentValue = 0;
+            if (matchingPrices.length !== 0) {
+              currentValue = matchingPrices[0].c;
+            }
+            const prevValue = stock.price;
+            return (
+              <div key={i}>
+                <div>
+                  <p>Stock:{stock.stock} Quantity:{stock.quantity} Total Value:${(currentValue * stock.quantity).toFixed(2)} Prev Value:${prevValue} Current Value:${currentValue} Difference:${(currentValue - prevValue).toFixed(2)}</p>
                 </div>
-              );
-            })}
+                <div>
+                  <button className="btn-2" onClick={() => {
+                    addFunds(currentValue * stock.quantity);
+                    stockData.deleteStock(stock.id);
+                    const newStocks = stocks.filter(x => x !== stock);
+                    setStocks(newStocks);
+                  }}>SELL</button>
+                </div>
+              </div>
+            );
+          })};
         </div>
       </div>
     </div>
-  );
-}
+  )
+};

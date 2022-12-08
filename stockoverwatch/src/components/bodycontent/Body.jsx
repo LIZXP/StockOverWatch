@@ -42,7 +42,7 @@ function Body() {
         </div>
       </div>
       <div className="bodytwo-container">
-        <h1 className="big-title">Investing never be this easy</h1>
+        <h1 className="big-title">Investing has never be this easy</h1>
         <p>No more on paper theory, put them in real practice.</p>
         <div className="top">
           <h1>Do the investment quick, easy and painfree</h1>
