@@ -28,7 +28,7 @@ const EmailForm = (props) => {
     axios
       .put(
         "https://api.chatengine.io/chats/",
-        { usernames: [email, "bryan nguyen"], is_direct_chat: true },
+        { 'usernames': ["bryan nguyen", email], is_direct_chat: true },
         {
           headers: {
             "Project-ID": "bf4316d6-924d-4a0c-80d8-f394e5f86ae7",
@@ -111,7 +111,7 @@ const EmailForm = (props) => {
         />
 
         <div style={styles.topText}>
-          Welcome to my <br /> support 👋
+        Please enter your email <br /> here.
         </div>
 
         <form
@@ -126,7 +126,7 @@ const EmailForm = (props) => {
         </form>
 
         <div style={styles.bottomText}>
-          Enter your email <br /> to get started.
+        We will be in <br /> touch 👋
         </div>
       </div>
     </div>

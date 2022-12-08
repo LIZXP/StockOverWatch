@@ -2,6 +2,12 @@
   font-family: Avenir !important;
 }
 
+button#new-chat-plus-button.ce-primary-button{
+  #svg{
+    padding-bottom: 10px;
+  }
+}
+
 .ce-my-message-bubble {
   background-color: #008000 !important;
 }
@@ -25,6 +31,11 @@
 .ce-my-message-timestamp {
   color: #008000 !important;
 }
+
+.ce-chat-engine {
+  width:100% !important;
+}
+
 
 .transition-3 {
   transition: all 0.33s ease;

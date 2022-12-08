@@ -5,19 +5,18 @@ import { ChatEngineWrapper, Socket, ChatFeed } from "react-chat-engine";
 import "../index.scss";
 
 const ChatEngine = (props) => {
-  const [showChat, setShowChat] = useState(false);
+  // const [showChat, setShowChat] = useState(false);
 
-  useEffect(() => {
-    if (props.visible) {
-      setTimeout(() => {
-        setShowChat(true);
-      }, 500);
-    }
-  });
+  // useEffect(() => {
+  //   if (props.visible) {
+  //     setTimeout(() => {
+  //       setShowChat(true);
+  //     }, 500);
+  //   }
+  // });
 
   return (
     <div
-      className="transition-5"
       style={{
         ...styles.chatEngineWindow,
         ...{
@@ -26,7 +25,7 @@ const ChatEngine = (props) => {
         },
       }}
     >
-      {showChat && (
+      {/* {showChat && (
         <ChatEngineWrapper>
           <Socket
             projectID={`bf4316d6-924d-4a0c-80d8-f394e5f86ae7`}
@@ -35,7 +34,17 @@ const ChatEngine = (props) => {
           />
           <ChatFeed activeChat={props.chat.id} />
         </ChatEngineWrapper>
-      )}
+      )} */}
+      { props.visible && 
+        <ChatEngineWrapper>
+          <Socket
+            projectID={'bf4316d6-924d-4a0c-80d8-f394e5f86ae7'}
+            userName={props.user.email}
+            userSecret={props.user.email}
+          />
+          <ChatFeed activeChat={props.chat.id} />
+        </ChatEngineWrapper>
+      }
     </div>
   );
 };

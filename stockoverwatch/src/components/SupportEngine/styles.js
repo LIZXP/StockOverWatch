@@ -5,7 +5,7 @@ export const styles = {
     // Border
     borderRadius: "50%",
     // Background
-    // backgroundImage: `url(https://www.newarab.com/sites/default/files/styles/large_16_9/public/2022-10/Andrew_Tate_on_%27Anything_Goes_With_James_English%27_in_2021.jpg?h=25926a0d&itok=etBlghfn)`,
+    backgroundImage: `url(https://i.pinimg.com/736x/60/88/0e/60880ef799bb1edd172d645c39906c29.jpg)`,
     backgroundRepeat: "no-repeat",
     backgroundPosition: "center",
     backgroundSize: "84px",
