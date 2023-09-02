@@ -114,3 +114,15 @@ export const monthStockPriceFinn = () => {
   });
   return allPromiseCandle;
 };
+
+ stocks.map((ssymb) => {
+    allPromiseCandle.push(
+      getStockPriceData(ssymb.name)
+        .then((res) => {
+          return { ...res.data, symbol: ssymb.name, img: ssymb.img };
+        })
+        .catch((e) => console.log(e))
+    );
+  });
+  return allPromiseCandle;
+};
